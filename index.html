@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit</title>
     <link rel="stylesheet" href="./src/index.css" />
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <!-- <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script> -->
+    <script src="./src/classes/submit.js"></script>
 
   </head>
   <body>
@@ -16,10 +17,10 @@
         <h5>Settings</h5>
         <form class="settings">
           <label for="height">Height</label>
-          <input type="text" id="height" name="height" value="50">
+          <input type="text" id="height" name="height">
           <label for="width">Width</label>
-          <input type="text" id="width" name="width" value="50"><br>
-          <button type="submit" onclick="submit()" id="submit">Submit</button>
+          <input type="text" id="width" name="width"><br>
+          <button type="submit" id="button1">Submit</button>
         </form>
       </div>
     </div>
