@@ -13,26 +13,33 @@
   </head>
   <body>
     <a-scene>
+
       <a-assets>
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
         <img id="skyTexture"
         src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
-         <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay
-        preload loop="true"></audio>
+         <!-- <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" loop="true" sound="position: false"></audio> -->
+         <a-sound id="test" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" sound="positional:false" loop="true"></a-sound>
       </a-assets>
+
+      <a-entity id="right" haptics vibration oculus-touch-controls="hand: right" laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 1.6; objects: .interactable" oculus-input-handler   oculus-thumbstick-controls="acceleration: 20"></a-entity>
+
+
       <a-box color="purple" position="0 2 -5" rotation="0 45 45" scale="2 2 2" animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true" scale-on-mouseenter></a-box>
       <a-entity own-cube position="1 2 3" rotation="0 45 45"></a-entity>
+
+
       <a-sky src="#skyTexture"></a-sky>
       <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane>
       <a-light type="ambient" color="#445451"></a-light>
       <a-light type="point" intensity="2" position="2 4 4"></a-light>
+
+
       <a-camera>
         <a-cursor></a-cursor>
       </a-camera>
-      <a-entity
-  text="value: Hello, A-Frame!; color: #BBB"
-  position="30 3 3"
-  scale="50 50 50"></a-entity>
+
+
     </a-scene>
   </body>
 </html>
