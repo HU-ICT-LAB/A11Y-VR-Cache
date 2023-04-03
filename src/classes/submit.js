@@ -10,7 +10,7 @@ function submit() {
         sessionStorage.setItem("settings", JSON.stringify(data));
     }
    
-    window.onload = function () {
-document.getElementById('button1').addEventListener('click', submit)
-    }
+window.onload = function () {
+    document.getElementById('button1').addEventListener('click', submit);
+}
 
