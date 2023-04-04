@@ -10,6 +10,8 @@
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="../components/environment/square.js"></script>
     <script src="../components/utils/mouseenter.js"></script>
+    <script src="https://unpkg.com/aframe-haptics-component/dist/aframe-haptics-component.min.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
   </head>
   <body>
     <a-scene>
@@ -22,11 +24,12 @@
          <a-sound id="test" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" sound="positional:false" loop="true"></a-sound>
       </a-assets>
 
-      <a-entity id="right" haptics oculus-touch-controls="hand: right" laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 1.6; objects: .interactable" oculus-thumbstick-controls="acceleration: 20"></a-entity>
+      <a-entity id="right" haptics oculus-touch-controls="hand: right" super-hands laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 1.6; objects: .interactable" oculus-thumbstick-controls="acceleration: 20"></a-entity>
+      
 
 
       <a-box color="purple" position="0 2 -5" rotation="0 45 45" scale="2 2 2" animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true" scale-on-mouseenter></a-box>
-      <a-entity own-cube position="1 2 3" rotation="0 45 45"></a-entity>
+      <a-entity own-cube hoverable grabbable stretchable draggable droppable position="1 2 3" rotation="0 45 45"></a-entity>
 
 
       <a-sky src="#skyTexture"></a-sky>
