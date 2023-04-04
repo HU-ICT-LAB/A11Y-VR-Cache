@@ -12,6 +12,7 @@
     <script src="../components/utils/mouseenter.js"></script>
     <script src="https://unpkg.com/aframe-haptics-component/dist/aframe-haptics-component.min.js"></script>
     <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+     <script src="https://unpkg.com/aframe-gltf-part-component/dist/aframe-gltf-part-component.min.js"></script>
   </head>
   <body>
     <a-scene>
@@ -19,26 +20,31 @@
       <a-assets>
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
         <img id="skyTexture"
-        src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+        src="../assets/clearSky.jpg">
          <!-- <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" loop="true" sound="position: false"></audio> -->
          <a-sound id="test" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" sound="positional:false" loop="true"></a-sound>
+         <a-asset-item id="testScene" src="../assets/3DModels/huisTest/scene.gltf"></a-asset-item>
+         <a-asset-item id="village" src="../assets/3DModels/village/scene.gltf"></a-asset-item>
+         <a-asset-item id="treasure" src="../assets/3DModels/treasureBox/scene.gltf"></a-asset-item>
       </a-assets>
 
       <a-entity id="right" haptics oculus-touch-controls="hand: right" super-hands laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 1.6; objects: .interactable" oculus-thumbstick-controls="acceleration: 20"></a-entity>
-      
+      <a-entity id="world" gltf-model="#village" scale="100 100 100"></a-entity>
 
 
-      <a-box color="purple" position="0 2 -5" rotation="0 45 45" scale="2 2 2" animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true" scale-on-mouseenter></a-box>
-      <a-entity own-cube hoverable grabbable stretchable draggable droppable position="1 2 3" rotation="0 45 45"></a-entity>
+      <!-- <a-box gltf-model="#testScene" position="0 2 -5" rotation="0 45 45" scale="2 2 2" animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true" scale-on-mouseenter></a-box> -->
+      <!-- <a-entity id="house" gltf-model="#testScene" scale="100 100 100"></a-entity> -->
+      <a-entity own-cube hoverable grabbable stretchable draggable droppable position="0 0 3" gltf-model="#treasure" scale="0.01 0.01 0.01"></a-entity>
 
 
       <a-sky src="#skyTexture"></a-sky>
-      <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane>
-      <a-light type="ambient" color="#445451"></a-light>
-      <a-light type="point" intensity="2" position="2 4 4"></a-light>
+      
+       <!-- <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane> -->
+      <!-- <a-light type="ambient" color="#445451"></a-light>
+      <a-light type="point" intensity="2" position="2 4 4"></a-light> -->
 
 
-      <a-camera>
+      <a-camera position="-5 2 57">
         <a-cursor></a-cursor>
       </a-camera>
 
