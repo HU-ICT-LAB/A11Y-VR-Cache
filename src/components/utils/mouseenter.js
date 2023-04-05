@@ -1,9 +1,10 @@
 AFRAME.registerComponent('border-collide', {
     
     init: function() {
-        var el = this.el;
+        let player = document.getElementById("camera");
 
-        el.addEventListener('collide', () => {
+        player.addEventListener("collide", () => {
+            console.log("ik heb iets aangeraakt");
             document.getElementById("right").components.haptics.pulse(1, 50);
             document.getElementById("test").components.sound.playSound();
         })
