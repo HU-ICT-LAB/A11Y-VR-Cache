@@ -5,6 +5,7 @@ AFRAME.registerComponent('border-collide', {
 
         el.addEventListener('collide', () => {
             document.getElementById("right").components.haptics.pulse(1, 50);
+            document.getElementById("test").components.sound.playSound();
         })
     }
 })
