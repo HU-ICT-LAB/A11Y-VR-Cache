@@ -30,13 +30,17 @@
          <a-asset-item id="treasure" src="../assets/3DModels/treasureBox/scene.gltf"></a-asset-item>
       </a-assets>
 
+      <!-- <a-entiy id="camera">
+        <a-entity id="camera" acceleration="200w" camera look-controls kinematic-body wasd-controls></a-entity>
+      </a-entiy> -->
+
       <a-entity id="right" haptics oculus-touch-controls="hand: right" super-hands laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 5; objects: .interactable" oculus-thumbstick-controls="acceleration: 5" kinematic-body></a-entity>
-      <a-entity id="world" gltf-model="#classroom" scale="0.2 0.5 0.25" border-collide static-body></a-entity>
+      <a-entity id="world" gltf-model="#classroom" scale="0.2 0.5 0.25" static-body></a-entity>
 
 
       <!-- <a-box gltf-model="#testScene" position="0 2 -5" rotation="0 45 45" scale="2 2 2" animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true" scale-on-mouseenter></a-box> -->
       <!-- <a-entity id="house" gltf-model="#testScene" scale="100 100 100"></a-entity> -->
-      <a-entity own-cube hoverable grabbable stretchable draggable droppable position="0 0 3" gltf-model="#treasure" scale="0.01 0.01 0.01"></a-entity>
+      <a-entity own-cube hoverable grabbable stretchable draggable droppable position="0 0 0" gltf-model="#treasure" scale="0.05 0.05 0.05" static-body></a-entity>
 
 
       <a-sky src="#skyTexture"></a-sky>
@@ -46,7 +50,7 @@
       <a-light type="point" intensity="2" position="2 4 4"></a-light> -->
 
 
-      <a-camera position="-5 -1 0">
+      <a-camera position="-3 1 0" static-body border-collide>
         <a-cursor></a-cursor>
       </a-camera>
 
