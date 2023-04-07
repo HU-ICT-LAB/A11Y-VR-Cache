@@ -28,6 +28,7 @@
          <a-sound id="test" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" sound="positional:true"></a-sound>
          <a-asset-item id="classroom" src="../assets/3DModels/classroom/scene.gltf"></a-asset-item>
          <a-asset-item id="treasure" src="../assets/3DModels/treasureBox/scene.gltf"></a-asset-item>
+         <a-asset-item id="fence" src="../assets/3DModels/fence/scene.gltf"></a-asset-item>
       </a-assets>
 
       <a-entity id="camera" camera look-controls wasd-controls="acceleration: 100;" position="0 2 0" kinematic-body border-collide>
@@ -52,9 +53,17 @@
 
       <a-entity id="border" scale="1 1 1">
         <a-box id="wall1" border1 position="-4 1 -4"></a-box>
-        <a-box id="wall2" border1 position="4 1 -4"></a-box>
-        <a-box id="wall3" border1 rotation="0 90 0" position="4 1 4"></a-box>
-        <a-box id="wall4" border1 rotation="0 90 0" position="4 1 -4"></a-box>
+        <a-box id="wall2" border1 position="4 1 2"></a-box>
+        <a-box id="wall3" border1 position="4 1 -1"></a-box>
+        <a-box id="wall4" border1 position="4 1 4"></a-box>
+        <a-box id="wall5" border1 rotation="0 90 0" position="4 1 -4"></a-box>
+        <a-box id="wall6" border1 rotation="0 90 0" position="2 1 -4"></a-box>
+        <a-box id="wall7" border1 rotation="0 90 0" position="-1 1 -4"></a-box>
+        <a-box id="wall8" border1 rotation="0 90 0" position="-4 1 4"></a-box>
+        <a-box id="wall9" border1 rotation="0 90 0" position="-1 1 4"></a-box>
+        <a-box id="wall10" border1 rotation="0 90 0" position="2 1 4"></a-box>
+        <a-box id="wall11" border1 position="-4 1 -2"></a-box>
+        <a-box id="wall12" border1 position="-4 1 1.5"></a-box>
     </a-entity>
 
 
