@@ -80,12 +80,11 @@ AFRAME.registerComponent("border1", {
         let distance10 = camPos.distanceTo(border10Post)
         let distance11 = camPos.distanceTo(border11Post)
         let distance12 = camPos.distanceTo(border12Post)
-
+        
         let allowedDistance = 2
-
         if(distance1 < allowedDistance || distance2 < allowedDistance || distance3 < allowedDistance || distance4 < allowedDistance || distance5 < allowedDistance || distance6 < allowedDistance || distance7 < allowedDistance || distance8 < allowedDistance || distance9 < allowedDistance || distance10 < allowedDistance || distance11 < allowedDistance || distance12 < allowedDistance) {
             document.getElementById("test").components.sound.playSound();
-            // setInterval(this.vibrate.bind(this), 50);
+            setInterval(this.vibrate.bind(this), 50);
         }
         else {
             document.getElementById("test").components.sound.stopSound();
