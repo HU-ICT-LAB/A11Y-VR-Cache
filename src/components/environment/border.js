@@ -37,14 +37,14 @@ AFRAME.registerComponent("border1", {
 
 
 
-		this.el.addEventListener("raycaster-intersected", function () {
-			console.log("je hebt de  muur geraakt")
-			this.intersect = true;
-		});
-		this.el.addEventListener("raycaster-intersected-cleared", function () {
-			this.intersect = false;
-		});
-		setInterval(this.vibrate.bind(this), 50);
+		// this.el.addEventListener("raycaster-intersected", function () {
+		// 	console.log("je hebt de  muur geraakt")
+		// 	this.intersect = true;
+		// });
+		// this.el.addEventListener("raycaster-intersected-cleared", function () {
+		// 	this.intersect = false;
+		// });
+		// setInterval(this.vibrate.bind(this), 50);
 	},
 
 	vibrate: function () {
@@ -84,11 +84,11 @@ AFRAME.registerComponent("border1", {
         let allowedDistance = 2
 
         if(distance1 < allowedDistance || distance2 < allowedDistance || distance3 < allowedDistance || distance4 < allowedDistance || distance5 < allowedDistance || distance6 < allowedDistance || distance7 < allowedDistance || distance8 < allowedDistance || distance9 < allowedDistance || distance10 < allowedDistance || distance11 < allowedDistance || distance12 < allowedDistance) {
-            document.getElementById("test").components.sound.playSound();
-            document.getElementById("right").components.haptics.vibrate(1, 50);
+            // document.getElementById("test").components.sound.playSound();
+            document.getElementById("right").components.haptics.pulse(1, 50);
         }
-        else {
-            document.getElementById("test").components.sound.stopSound();
-        }
+        // else {
+        //     document.getElementById("test").components.sound.stopSound();
+        // }
     }
 });
