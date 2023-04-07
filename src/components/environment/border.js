@@ -53,42 +53,42 @@ AFRAME.registerComponent("border1", {
 		}
 	},
 
-    // tick: function() {
-    //     let camPos = this.cam;
-    //     let border1Post = this.border1;
-    //     let border2Post = this.border2;
-    //     let border3Post = this.border3;
-    //     let border4Post = this.border4;
-    //     let border5Post = this.border5;
-    //     let border6Post = this.border6;
-    //     let border7Post = this.border7;
-    //     let border8Post = this.border8;
-    //     let border9Post = this.border9;
-    //     let border10Post = this.border10;
-    //     let border11Post = this.border11;
-    //     let border12Post = this.border12;
+    tick: function() {
+        let camPos = this.cam;
+        let border1Post = this.border1;
+        let border2Post = this.border2;
+        let border3Post = this.border3;
+        let border4Post = this.border4;
+        let border5Post = this.border5;
+        let border6Post = this.border6;
+        let border7Post = this.border7;
+        let border8Post = this.border8;
+        let border9Post = this.border9;
+        let border10Post = this.border10;
+        let border11Post = this.border11;
+        let border12Post = this.border12;
 
-    //     let distance1 = camPos.distanceTo(border1Post)
-    //     let distance2 = camPos.distanceTo(border2Post)
-    //     let distance3 = camPos.distanceTo(border3Post)
-    //     let distance4 = camPos.distanceTo(border4Post)
-    //     let distance5 = camPos.distanceTo(border5Post)
-    //     let distance6 = camPos.distanceTo(border6Post)
-    //     let distance7 = camPos.distanceTo(border7Post)
-    //     let distance8 = camPos.distanceTo(border8Post)
-    //     let distance9 = camPos.distanceTo(border9Post)
-    //     let distance10 = camPos.distanceTo(border10Post)
-    //     let distance11 = camPos.distanceTo(border11Post)
-    //     let distance12 = camPos.distanceTo(border12Post)
+        let distance1 = camPos.distanceTo(border1Post)
+        let distance2 = camPos.distanceTo(border2Post)
+        let distance3 = camPos.distanceTo(border3Post)
+        let distance4 = camPos.distanceTo(border4Post)
+        let distance5 = camPos.distanceTo(border5Post)
+        let distance6 = camPos.distanceTo(border6Post)
+        let distance7 = camPos.distanceTo(border7Post)
+        let distance8 = camPos.distanceTo(border8Post)
+        let distance9 = camPos.distanceTo(border9Post)
+        let distance10 = camPos.distanceTo(border10Post)
+        let distance11 = camPos.distanceTo(border11Post)
+        let distance12 = camPos.distanceTo(border12Post)
 
-    //     let allowedDistance = 2
+        let allowedDistance = 2
 
-    //     if(distance1 < allowedDistance || distance2 < allowedDistance || distance3 < allowedDistance || distance4 < allowedDistance || distance5 < allowedDistance || distance6 < allowedDistance || distance7 < allowedDistance || distance8 < allowedDistance || distance9 < allowedDistance || distance10 < allowedDistance || distance11 < allowedDistance || distance12 < allowedDistance) {
-    //         document.getElementById("test").components.sound.playSound();
-    //         setInterval(this.vibrate.bind(this), 50);
-    //     }
-    //     else {
-    //         document.getElementById("test").components.sound.stopSound();
-    //     }
-    // }
+        if(distance1 < allowedDistance || distance2 < allowedDistance || distance3 < allowedDistance || distance4 < allowedDistance || distance5 < allowedDistance || distance6 < allowedDistance || distance7 < allowedDistance || distance8 < allowedDistance || distance9 < allowedDistance || distance10 < allowedDistance || distance11 < allowedDistance || distance12 < allowedDistance) {
+            document.getElementById("test").components.sound.playSound();
+            // setInterval(this.vibrate.bind(this), 50);
+        }
+        else {
+            document.getElementById("test").components.sound.stopSound();
+        }
+    }
 });
