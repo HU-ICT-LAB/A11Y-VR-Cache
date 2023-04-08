@@ -1,6 +1,7 @@
 AFRAME.registerComponent('own-cube', {
     init: function() {
        var el = this.el;
+       el.setAttribute("class", "interactable");
 
        el.addEventListener("raycaster-intersected", () => {
             document.getElementById("test").components.sound.playSound();
