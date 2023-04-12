@@ -83,7 +83,7 @@ AFRAME.registerComponent("border1", {
         
         let allowedDistance = 2
         if(distance1 < allowedDistance || distance2 < allowedDistance || distance3 < allowedDistance || distance4 < allowedDistance || distance5 < allowedDistance || distance6 < allowedDistance || distance7 < allowedDistance || distance8 < allowedDistance || distance9 < allowedDistance || distance10 < allowedDistance || distance11 < allowedDistance || distance12 < allowedDistance) {
-            document.getElementById("test").components.sound.playSound();
+            // document.getElementById("test").components.sound.playSound();
             document.getElementById("right").components.haptics.pulse(1, 50);
         }
         else {
