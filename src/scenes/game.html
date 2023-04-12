@@ -12,10 +12,10 @@
     <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
      <script src="https://unpkg.com/aframe-gltf-part-component/dist/aframe-gltf-part-component.min.js"></script>
      <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
-
       <script src="../components/environment/square.js"></script>
       <script src="../components/utils/mouseenter.js"></script>
       <script src="../components/environment/border.js"></script>
+      <script src="../components/utils/interactionCache.js"></script>
   </head>
   <body>
     <a-scene physics>
@@ -29,6 +29,9 @@
          <a-asset-item id="classroom" src="../assets/3DModels/classroom/scene.gltf"></a-asset-item>
          <a-asset-item id="treasure" src="../assets/3DModels/treasureBox/scene.gltf"></a-asset-item>
          <a-asset-item id="room" src="../assets/3DModels/gameroom/scene.gltf"></a-asset-item>
+         <a-sound id="cacheGevonden" src="/src/assets/sounds/cacheGevonden.mp3" preload></a-sound>
+         <!-- Moet een andere audio vinden voor als je dichtbij de cache bent -->
+         <audio id="dichtbijCache" src="/src/assets/sounds/dichtbijCache.mp3" preload></audio>
       </a-assets>
 
       <a-entity id="camera" camera look-controls wasd-controls="acceleration: 100;" position="0 1 0" kinematic-body border-collide>
@@ -42,8 +45,7 @@
 
       <!-- <a-box gltf-model="#testScene" position="0 2 -5" rotation="0 45 45" scale="2 2 2" animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true" scale-on-mouseenter></a-box> -->
       <!-- <a-entity id="house" gltf-model="#testScene" scale="100 100 100"></a-entity> -->
-      <a-entity hoverable grabbable stretchable draggable droppable position="1 -0.05 -1.5" gltf-model="#treasure" scale="0.005 0.005 0.005" kinematic-body own-cube></a-entity>
-
+      <a-entity cache-interaction hoverable grabbable stretchable draggable droppable position="1 -0.05 -1.5" gltf-model="#treasure" scale="0.005 0.005 0.005" sound="src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 60" kinematic-body own-cube></a-entity>
 
       <a-sky src="#skyTexture"></a-sky>
       
