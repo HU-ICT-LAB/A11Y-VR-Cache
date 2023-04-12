@@ -4,7 +4,7 @@ AFRAME.registerComponent('own-cube', {
        el.setAttribute("class", "interactable");
 
        el.addEventListener("raycaster-intersected", () => {
-            document.getElementById("test").components.sound.playSound();
+            document.getElementById("cacheGevonden").components.sound.playSound();
             document.getElementById("right").components.haptics.pulse(15, 50);
 
        });
