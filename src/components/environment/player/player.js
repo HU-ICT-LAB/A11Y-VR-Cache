@@ -18,7 +18,7 @@ AFRAME.registerComponent("player", {
 		case "oculus" :
 			element.innerHTML =
 				"<a-entity id=\"rig\" kinematic-body=\"shape:mesh\">\n" +
-				"    <a-entity id=\"camera\" position=\"0 1 0\">\n" +
+				"    <a-entity id=\"camera\" position=\"0 0 0\">\n" +
 				"        <a-entity camera look-controls>"+ visual +"</a-entity>\n" +
 				"    </a-entity>\n" +
 				"    <a-entity id=\"left\" haptics vibration oculus-touch-controls=\"hand: left\" ></a-entity>\n" +
