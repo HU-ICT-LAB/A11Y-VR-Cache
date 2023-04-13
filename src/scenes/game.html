@@ -19,7 +19,7 @@
       <script src="../components/environment/player/cameraPos.js"></script>
   </head>
   <body>
-    <a-scene physics cameraPos>
+    <a-scene physics>
 
       <a-assets>
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
@@ -35,12 +35,12 @@
          <audio id="dichtbijCache" src="../assets/sounds/dichtbijCache.mp3" preload></audio>
       </a-assets>
 
-      <!-- <a-entity id="camera" camera look-controls wasd-controls="acceleration: 100;" position="0 1 0" kinematic-body border-collide> -->
-        <!-- <a-cursor></a-cursor>
-      </a-entity> -->
-      <a-entity player="device: oculus"></a-entity>
+      <a-entity id="camera" camera look-controls wasd-controls="acceleration: 100;" position="0 1 0" kinematic-body border-collide>
+         <a-cursor></a-cursor>
+      </a-entity>
+      <!-- <a-entity player="device: oculus"></a-entity> -->
 
-      <!-- <a-entity id="right" haptics oculus-touch-controls="hand: right" super-hands laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 5; objects: .interactable" kinematic-body></a-entity> -->
+      <a-entity id="right" haptics oculus-touch-controls="hand: right" super-hands laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 5; objects: .interactable" kinematic-body></a-entity>
       <a-entity id="world" gltf-model="#room" scale="0.8 0.8 0.8"></a-entity>
 
 
