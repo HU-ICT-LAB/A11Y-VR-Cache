@@ -44,7 +44,6 @@ AFRAME.registerComponent("border1", {
 		this.el.addEventListener("raycaster-intersected-cleared", function () {
 			this.intersect = false;
 		});
-		setInterval(this.vibrate.bind(this), 50);
 	},
 
 	vibrate: function () {
