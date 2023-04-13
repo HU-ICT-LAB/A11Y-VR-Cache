@@ -67,18 +67,18 @@ AFRAME.registerComponent("border1", {
         let border11Post = this.border11;
         let border12Post = this.border12;
 
-        let distance1 = camPos.distanceTo(border1Post)
-        let distance2 = camPos.distanceTo(border2Post)
-        let distance3 = camPos.distanceTo(border3Post)
-        let distance4 = camPos.distanceTo(border4Post)
-        let distance5 = camPos.distanceTo(border5Post)
-        let distance6 = camPos.distanceTo(border6Post)
-        let distance7 = camPos.distanceTo(border7Post)
-        let distance8 = camPos.distanceTo(border8Post)
-        let distance9 = camPos.distanceTo(border9Post)
-        let distance10 = camPos.distanceTo(border10Post)
-        let distance11 = camPos.distanceTo(border11Post)
-        let distance12 = camPos.distanceTo(border12Post)
+        let distance1 = camPos.distanceToSquared(border1Post)
+        let distance2 = camPos.distanceToSquared(border2Post)
+        let distance3 = camPos.distanceToSquared(border3Post)
+        let distance4 = camPos.distanceToSquared(border4Post)
+        let distance5 = camPos.distanceToSquared(border5Post)
+        let distance6 = camPos.distanceToSquared(border6Post)
+        let distance7 = camPos.distanceToSquared(border7Post)
+        let distance8 = camPos.distanceToSquared(border8Post)
+        let distance9 = camPos.distanceToSquared(border9Post)
+        let distance10 = camPos.distanceToSquared(border10Post)
+        let distance11 = camPos.distanceToSquared(border11Post)
+        let distance12 = camPos.distanceToSquared(border12Post)
         
         let allowedDistance = 1.5
         if(distance1 < allowedDistance || distance2 < allowedDistance || distance3 < allowedDistance || distance4 < allowedDistance || distance5 < allowedDistance || distance6 < allowedDistance || distance7 < allowedDistance || distance8 < allowedDistance || distance9 < allowedDistance || distance10 < allowedDistance || distance11 < allowedDistance || distance12 < allowedDistance) {
