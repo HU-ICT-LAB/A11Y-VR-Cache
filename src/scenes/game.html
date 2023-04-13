@@ -15,6 +15,7 @@
       <script src="../components/utils/mouseenter.js"></script>
       <script src="../components/environment/border.js"></script>
       <script src="../components/utils/interactionCache.js"></script>
+      <script src="../components/environment/player/player.js"></script>
   </head>
   <body>
     <a-scene physics>
@@ -33,12 +34,12 @@
          <audio id="dichtbijCache" src="../assets/sounds/dichtbijCache.mp3" preload></audio>
       </a-assets>
 
-      <a-entity id="camera" camera look-controls wasd-controls="acceleration: 100;" position="0 1 0" kinematic-body border-collide>
-        <a-cursor></a-cursor>
-      </a-entity>
-     
+      <!-- <a-entity id="camera" camera look-controls wasd-controls="acceleration: 100;" position="0 1 0" kinematic-body border-collide> -->
+        <!-- <a-cursor></a-cursor>
+      </a-entity> -->
+      <a-entity player="device: oculus"></a-entity>
 
-      <a-entity id="right" haptics oculus-touch-controls="hand: right" super-hands laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 5; objects: .interactable" kinematic-body></a-entity>
+      <!-- <a-entity id="right" haptics oculus-touch-controls="hand: right" super-hands laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 5; objects: .interactable" kinematic-body></a-entity> -->
       <a-entity id="world" gltf-model="#room" scale="0.8 0.8 0.8"></a-entity>
 
 
@@ -66,6 +67,8 @@
         <a-box id="wall11" border1 position="-2 1 -1"></a-box>
         <a-box id="wall12" border1 position="-2 1 1"></a-box>
     </a-entity>
+
+   
 
 
     </a-scene>

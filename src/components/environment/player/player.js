@@ -22,7 +22,7 @@ AFRAME.registerComponent("player", {
 				"        <a-entity camera look-controls>"+ visual +"</a-entity>\n" +
 				"    </a-entity>\n" +
 				"    <a-entity id=\"left\" haptics vibration oculus-touch-controls=\"hand: left\" ></a-entity>\n" +
-				"    <a-entity id=\"right\" haptics vibration oculus-touch-controls=\"hand: right\" laser-controls raycaster=\"lineColor: red; lineOpacity: 0.5; far: 1.6; objects: .interactable\" oculus-thumbstick-controls=\"acceleration: 20\"></a-entity>\n" +
+				"    <a-entity id=\"right\" haptics vibration oculus-touch-controls=\"hand: right\" laser-controls raycaster=\"lineColor: red; lineOpacity: 0.5; far: 1.6; objects: .interactable\"></a-entity>\n" +
 				"</a-entity>";
 			break;
 		default:
