@@ -1,8 +1,7 @@
 AFRAME.registerComponent('cache-interaction', {
-    intersect: false,
-    
     init: function() {
         const el = this.el;
+        el.setAttribute("class", "interactable");
 
         el.addEventListener("click", () => {
             document.getElementById("cacheGevonden").components.sound.playSound();
@@ -11,18 +10,7 @@ AFRAME.registerComponent('cache-interaction', {
 
         el.addEventListener("raycaster-intersected", () => {
 			console.log("controller op cache");
-			this.intersect = true;
+            document.getElementById("right").components.haptics.pulse(15, 50);
 		});
-
-        el.addEventListener("raycaster-intersected-cleared", function () {
-			this.intersect = false;
-		});
-
-        setInterval(this.vibrate.bind(this), 50);},
-
-        vibrate: function () {
-            if (this.intersect) {
-                document.getElementById("right").components.haptics.pulse(1, 50);
-            }
         },
     })
