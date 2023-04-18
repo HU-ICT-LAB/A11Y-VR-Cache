@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "aframe": "^1.4.1",
+    "aframe-haptics-component": "^1.6.3",
     "lit": "^2.6.1",
     "three": "^0.150.1"
   },
