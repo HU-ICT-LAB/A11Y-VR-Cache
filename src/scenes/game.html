@@ -6,54 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit</title>
     <link rel="stylesheet" href="../index.css" />
+    <!-- IMPORTS -->
     <script type="module" src="/src/my-element.js"></script>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-haptics-component/dist/aframe-haptics-component.min.js"></script>
     <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
      <script src="https://unpkg.com/aframe-gltf-part-component/dist/aframe-gltf-part-component.min.js"></script>
      <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
+
+     <!-- COMPONENTS -->
       <script src="../components/utils/mouseenter.js"></script>
       <script src="../components/environment/border.js"></script>
       <script src="../components/utils/interactionCache.js"></script>
       <script src="../components/environment/player/player.js"></script>
       <script src="../components/environment/player/cameraPos.js"></script>
+      <script src="../components/environment/world/Closet.js"></script>
+      <script src="../components/animation-mixer.js"></script>
   </head>
   <body>
+
+    <!-- SCENE -->
     <a-scene physics>
 
+      <!-- ASSETS -->
       <a-assets>
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
         <img id="skyTexture"
         src="../assets/clearSky.jpg">
-         <!-- <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" loop="true" sound="position: false"></audio> -->
          <a-sound id="test" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" sound="positional:true"></a-sound>
-         <a-asset-item id="classroom" src="../assets/3DModels/classroom/scene.gltf"></a-asset-item>
          <a-asset-item id="treasure" src="../assets/3DModels/treasureBox/scene.gltf"></a-asset-item>
-<a-asset-item id="room" src="../assets/3DModels/PlantBedroom/scene.gltf"></a-asset-item>
+         <a-asset-item id="room" src="../assets/3DModels/emptyRoom/scene.gltf"></a-asset-item>
          <a-sound id="cacheGevonden" src="../assets/sounds/cacheGevonden.wav" preload></a-sound>
-         <!-- Moet een andere audio vinden voor als je dichtbij de cache bent -->
          <audio id="dichtbijCache" src="../assets/sounds/dichtbijCache.mp3" preload></audio>
+         <a-asset-item id="closet" src="../assets/3DModels/Closet/scene.gltf"></a-asset-item>
       </a-assets>
 
+      <!-- CAMERA/PLAYER -->
       <a-entity id="camera" camera look-controls wasd-controls="acceleration: 100;" position="0 1 0" kinematic-body border-collide>
          <a-cursor></a-cursor>
       </a-entity>
-      <!-- <a-entity player="device: oculus"></a-entity> -->
-
       <a-entity id="right" haptics oculus-touch-controls="hand: right" super-hands laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 5; objects: .interactable" kinematic-body></a-entity>
-      <a-entity id="world" gltf-part="src: #room; part: Shelf_Shelves_0" scale="0.8 0.8 0.8"></a-entity>
 
-
-      <!-- <a-box gltf-model="#testScene" position="0 2 -5" rotation="0 45 45" scale="2 2 2" animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true" scale-on-mouseenter></a-box> -->
-      <!-- <a-entity id="house" gltf-model="#testScene" scale="100 100 100"></a-entity> -->
-      <a-entity cache-interaction hoverable grabbable stretchable draggable droppable position="1 -0.05 -1.5" gltf-model="#treasure" scale="0.005 0.005 0.005" sound="src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 40" kinematic-body></a-entity>
-
+      <!-- WORLD -->
+      <a-entity id="world" gltf-model="#room" scale="0.7 0.7 0.55"></a-entity>
+      <a-entity cache-interaction hoverable grabbable stretchable draggable droppable position="1 0 -1.5" gltf-model="#treasure" scale="0.005 0.005 0.005" sound="src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 40" kinematic-body></a-entity>
+      <a-entity own-closet scale="0.003 0.003 0.003"  position="-1.5 0 -1" gltf-model="#closet"></a-entity>
       <a-sky src="#skyTexture"></a-sky>
-      
-       <!-- <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane> -->
-      <!-- <a-light type="ambient" color="#445451"></a-light>
-      <a-light type="point" intensity="2" position="2 4 4"></a-light> -->
 
+
+      <!-- BORDER -->
       <a-entity id="border" scale="1 1 1">
         <a-box id="wall1" border1 position="-2 1 -2"></a-box>
         <a-box id="wall2" border1 position="2 1 1"></a-box>
