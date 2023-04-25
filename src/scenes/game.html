@@ -6,33 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit</title>
     <link rel="stylesheet" href="../index.css" />
+    <!-- IMPORTS -->
     <script type="module" src="/src/my-element.js"></script>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="../components/square.js"></script>
-    <script src="../components/mouseenter.js"></script>
+    <script src="https://unpkg.com/aframe-haptics-component/dist/aframe-haptics-component.min.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+     <script src="https://unpkg.com/aframe-gltf-part-component/dist/aframe-gltf-part-component.min.js"></script>
+     <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
+
+     <!-- COMPONENTS -->
+      <script src="../components/utils/mouseenter.js"></script>
+      <script src="../components/environment/border.js"></script>
+      <script src="../components/utils/interactionCache.js"></script>
+      <script src="../components/environment/player/player.js"></script>
+      <script src="../components/environment/player/cameraPos.js"></script>
+      <script src="../components/environment/world/Closet.js"></script>
+      <script src="../components/animation-mixer.js"></script>
   </head>
   <body>
-    <a-scene>
+
+    <!-- SCENE -->
+    <a-scene physics>
+
+      <!-- ASSETS -->
       <a-assets>
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
         <img id="skyTexture"
-        src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
-         <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay
-        preload loop="true"></audio>
+        src="../assets/clearSky.jpg">
+         <a-sound id="test" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" sound="positional:true"></a-sound>
+         <a-asset-item id="treasure" src="../assets/3DModels/treasureBox/scene.gltf"></a-asset-item>
+         <a-asset-item id="room" src="../assets/3DModels/emptyRoom/scene.gltf"></a-asset-item>
+         <a-sound id="cacheGevonden" src="../assets/sounds/cacheGevonden.wav" preload></a-sound>
+         <audio id="dichtbijCache" src="../assets/sounds/dichtbijCache.mp3" preload></audio>
+         <a-asset-item id="closet" src="../assets/3DModels/Closet/scene.gltf"></a-asset-item>
       </a-assets>
-      <a-box color="purple" position="0 2 -5" rotation="0 45 45" scale="2 2 2" animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true" scale-on-mouseenter></a-box>
-      <a-entity own-cube position="1 2 3" rotation="0 45 45"></a-entity>
+
+      <!-- CAMERA/PLAYER -->
+      <a-entity id="camera" camera look-controls wasd-controls="acceleration: 100;" position="0 1 0" kinematic-body border-collide>
+         <a-cursor></a-cursor>
+      </a-entity>
+      <a-entity id="right" haptics oculus-touch-controls="hand: right" super-hands laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 5; objects: .interactable" kinematic-body></a-entity>
+
+      <!-- WORLD -->
+      <a-entity id="world" gltf-model="#room" scale="0.7 0.7 0.55"></a-entity>
+      <a-entity cache-interaction hoverable grabbable stretchable draggable droppable position="1 0 -1.5" gltf-model="#treasure" scale="0.005 0.005 0.005" sound="src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 40" kinematic-body></a-entity>
+      <a-entity own-closet scale="0.003 0.003 0.003"  position="-1.5 0 -1" gltf-model="#closet"></a-entity>
       <a-sky src="#skyTexture"></a-sky>
-      <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane>
-      <a-light type="ambient" color="#445451"></a-light>
-      <a-light type="point" intensity="2" position="2 4 4"></a-light>
-      <a-camera>
-        <a-cursor></a-cursor>
-      </a-camera>
-      <a-entity
-  text="value: Hello, A-Frame!; color: #BBB"
-  position="30 3 3"
-  scale="50 50 50"></a-entity>
+
+
+      <!-- BORDER -->
+      <a-entity id="border" scale="1 1 1">
+        <a-box id="wall1" border1 position="-2 1 -2"></a-box>
+        <a-box id="wall2" border1 position="2 1 1"></a-box>
+        <a-box id="wall3" border1 position="2 1 -1"></a-box>
+        <a-box id="wall4" border1 position="2 1 2"></a-box>
+        <a-box id="wall5" border1 rotation="0 90 0" position="2 1 -2"></a-box>
+        <a-box id="wall6" border1 rotation="0 90 0" position="1 1 -2"></a-box>
+        <a-box id="wall7" border1 rotation="0 90 0" position="-1 1 -2"></a-box>
+        <a-box id="wall8" border1 rotation="0 90 0" position="-2 1 2"></a-box>
+        <a-box id="wall9" border1 rotation="0 90 0" position="-1 1 2"></a-box>
+        <a-box id="wall10" border1 rotation="0 90 0" position="1 1 2"></a-box>
+        <a-box id="wall11" border1 position="-2 1 -1"></a-box>
+        <a-box id="wall12" border1 position="-2 1 1"></a-box>
+        <a-box id="wall13" border1 rotation="0 90 0" position="0 1 -2"></a-box>
+        <a-box id="wall14" border1 rotation="0 90 0" position="0 1 2"></a-box>
+        <a-box id="wall15" border1 position="-2 1 0"></a-box>
+        <a-box id="wall16" border1 position="2 1 0"></a-box>
+    </a-entity>
+
+   
+
+
     </a-scene>
   </body>
 </html>
