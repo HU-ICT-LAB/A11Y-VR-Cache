@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
      <script src="https://unpkg.com/aframe-gltf-part-component/dist/aframe-gltf-part-component.min.js"></script>
      <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
 
      <!-- COMPONENTS -->
       <script src="../components/utils/mouseenter.js"></script>
@@ -30,14 +31,20 @@
 
       <!-- ASSETS -->
       <a-assets>
+        <!-- images -->
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
         <img id="skyTexture"
         src="../assets/clearSky.jpg">
+
+        <!-- audio -->
          <a-sound id="test" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" sound="positional:true"></a-sound>
+         <a-sound id="cacheGevonden" src="../assets/sounds/cacheGevonden.wav" preload></a-sound>
+         <a-sound id="kast" src="../assets/sounds/Kast.mp3" preload></a-sound>
+         <audio id="dichtbijCache" src="../assets/sounds/dichtbijCache.mp3" preload></audio>
+
+         <!-- models -->
          <a-asset-item id="treasure" src="../assets/3DModels/treasureBox/scene.gltf"></a-asset-item>
          <a-asset-item id="room" src="../assets/3DModels/emptyRoom/scene.gltf"></a-asset-item>
-         <a-sound id="cacheGevonden" src="../assets/sounds/cacheGevonden.wav" preload></a-sound>
-         <audio id="dichtbijCache" src="../assets/sounds/dichtbijCache.mp3" preload></audio>
          <a-asset-item id="closet" src="../assets/3DModels/Closet/scene.gltf"></a-asset-item>
       </a-assets>
 
@@ -50,7 +57,7 @@
       <!-- WORLD -->
       <a-entity id="world" gltf-model="#room" scale="0.7 0.7 0.55"></a-entity>
       <a-entity cache-interaction hoverable grabbable stretchable draggable droppable position="1 0 -1.5" gltf-model="#treasure" scale="0.005 0.005 0.005" sound="src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 40" kinematic-body></a-entity>
-      <a-entity own-closet scale="0.003 0.003 0.003"  position="-1.5 0 -1" gltf-model="#closet"></a-entity>
+      <a-entity own-closet scale="0.8 0.8 0.8"  position="1.7 0 1.65" gltf-model="#closet"></a-entity>
       <a-sky src="#skyTexture"></a-sky>
 
 
