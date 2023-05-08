@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bed
+* source:	https://sketchfab.com/3d-models/bed-61e94a7f95694364af86023d86ea67f3
+* author:	Darya (https://sketchfab.com/dariavxls)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bed" (https://sketchfab.com/3d-models/bed-61e94a7f95694364af86023d86ea67f3) by Darya (https://sketchfab.com/dariavxls) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
