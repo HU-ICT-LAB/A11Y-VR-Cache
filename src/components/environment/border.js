@@ -20,7 +20,7 @@ AFRAME.registerComponent("border1", {
 
 	init: function () {
 		const element = this.el;
-		element.setAttribute("material", "color: green;");
+		element.setAttribute("material", "color: green; opacity: 0;");
 		element.setAttribute("scale", "0 10 1");
 		element.setAttribute("static-body", null);
 		element.setAttribute("class", "interactable");
