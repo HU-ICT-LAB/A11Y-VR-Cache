@@ -2,13 +2,6 @@ AFRAME.registerComponent("player", {
 	init: function () {
 		const element = this.el;
 
-		if(sessionStorage.getItem("versie") === "1") {
-			let object = sessionStorage.getItem("object");
-			switch(object) {
-				case "bed":  
-			}
-		}
-
 		element.addEventListener("bButtonDown", () => {
 				console.log("enter toets werkt")
 				if(sessionStorage.getItem("versie") === "1") {
