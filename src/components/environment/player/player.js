@@ -1,32 +1,49 @@
 AFRAME.registerComponent("player", {
-	schema: {
-		device: {type: "string"},
-		visual: {type: "string"}
-	},
 	init: function () {
 		const element = this.el;
-		let visual = "";
 
-		switch (this.data.device) {
-		case "pc" :
-			element.innerHTML =
-                    "<a-entity id=\"camera\" position=\"0 1 0\" camera kinematic-body look-controls wasd-controls>\n" +
-                    "<a-cursor></a-cursor>\n" +
-                    "     </a-entity>\n" +
-                    "</a-entity>";
-			break;
-		case "oculus" :
-			element.innerHTML =
-				"<a-entity id=\"rig\" kinematic-body=\"shape:mesh\">\n" +
-				"    <a-entity id=\"camera\" position=\"0 0 0\">\n" +
-				"        <a-entity camera look-controls>"+ visual +"</a-entity>\n" +
-				"    </a-entity>\n" +
-				"    <a-entity id=\"left\" haptics vibration oculus-touch-controls=\"hand: left\" ></a-entity>\n" +
-				"    <a-entity id=\"right\" haptics vibration oculus-touch-controls=\"hand: right\" laser-controls raycaster=\"lineColor: red; lineOpacity: 0.5; far: 1.6; objects: .interactable\"></a-entity>\n" +
-				"</a-entity>";
-			break;
-		default:
-
+		if(sessionStorage.getItem("versie") === "1") {
+			let object = sessionStorage.getItem("object");
+			switch(object) {
+				case "bed":  
+			}
 		}
+
+		element.addEventListener("bButtonDown", () => {
+				console.log("enter toets werkt")
+				if(sessionStorage.getItem("versie") === "1") {
+					sessionStorage.setItem("versie",  2);
+					window.location.reload();
+					return;
+				}
+				sessionStorage.setItem("versie",  1);
+				window.location.reload();
+			});
+
+		
+		if(sessionStorage.getItem("versie") === "1") {
+				element.addEventListener("raycaster-intersection", (e) => {
+					let object = e.detail.els[0];
+					object.components.sound.playSound();
+				
+				});
+		}
+
+		else {
+			element.addEventListener("raycaster-intersection", () => {
+				console.log("ik ben aan het trillen");
+				element.components.haptics.pulse(1, 50);
+			
+			});
+
+			element.addEventListener("click", (e) => {
+				let object = e.detail.intersectedEl;
+				object.components.sound.playSound();
+			})
+		}
+		
+
+
+		
 	}
 })

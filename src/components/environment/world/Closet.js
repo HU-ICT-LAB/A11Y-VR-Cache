@@ -3,11 +3,9 @@ AFRAME.registerComponent("own-closet", {
     
     init: function () {
         this.el.setAttribute("class", "interactable");
-
-        this.el.addEventListener("raycaster-intersected", () => {
-            this.el.setAttribute("sound", "src: #kast;")
-            this.el.components.sound.playSound();
-        })
+        this.el.setAttribute("id", "closet");
+        this.el.setAttribute("sound", "src: #kast;")
+  
 
         if(this.closetOpened === false) {
             this.el.addEventListener("click", () => {
