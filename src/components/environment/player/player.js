@@ -23,6 +23,7 @@ AFRAME.registerComponent("player", {
 
 	init: function () {
 		const element = this.el;
+
 		element.addEventListener("bButtonDown", () => {
 				console.log("enter toets werkt")
 				if(this.data.versie === "1") {
