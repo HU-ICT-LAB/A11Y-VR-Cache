@@ -8,7 +8,7 @@ AFRAME.registerComponent("own-closet", {
   
 
         if(this.closetOpened === false) {
-            this.el.addEventListener("click", () => {
+            this.el.addEventListener("bbuttondown", () => {
                 this.el.setAttribute("sound", "src: #kastopen;")
                 this.el.setAttribute("animation-mixer", "clip: 001; timeScale: 0.2;");
                 setTimeout(() => {this.el.setAttribute("animation-mixer", "timeScale: 0;")}, 1600);
@@ -18,7 +18,7 @@ AFRAME.registerComponent("own-closet", {
     
             });
         }else {
-            this.el.addEventListener("click", () => {
+            this.el.addEventListener("bbuttondown", () => {
                 this.el.setAttribute("animation-mixer", "timeScale: 0.2;");
                 this.el.addEventListener("animation-loop", () => {
                     this.el.setAttribute("sound", "src: #kastdicht;")
