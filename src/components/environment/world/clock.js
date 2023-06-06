@@ -1,8 +1,11 @@
 AFRAME.registerComponent("clock", {
-    
+
 	init: function () {
         const el = this.el;
-        this.el.setAttribute("animation-mixer", "clip: Animation; timeScale: 1");
-        document.getElementById("clockSound").components.sound.playSound();
+        el.setAttribute("animation-mixer", "clip: Animation; timeScale: 1");
+
+        el.setAttribute("sound", "src", "#clockSound");
+        el.setAttribute("sound", "autoplay", true);
+        el.setAttribute("sound", "loop", true);
 	}
 })
