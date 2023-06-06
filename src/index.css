@@ -29,22 +29,6 @@ body {
   }
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  margin-left: 650px;
-  background-color: blue;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.container {
-  width: 500px;
-  height: 800px;
-}
-
 h4 {
   text-align: center;
 }
@@ -52,4 +36,19 @@ h4 {
 h5 {
   margin-top: 40px;
   margin-left: 50px;
+}
+
+.button {
+  display: block;
+  width: 400px;
+  height: 100px;
+  background: #4E9CAF;
+  padding: 150px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 25px;
+  margin-left: 550px;
 }

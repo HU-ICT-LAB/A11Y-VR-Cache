@@ -23,7 +23,6 @@ AFRAME.registerComponent("border1", {
 		element.setAttribute("material", "color: green; opacity: 0;");
 		element.setAttribute("scale", "0 10 1");
 		element.setAttribute("static-body", null);
-		element.setAttribute("class", "interactable");
 
         this.cam = document.getElementById("camera").object3D.position;
         this.border1 = document.getElementById("wall1").getAttribute("position");
@@ -42,16 +41,6 @@ AFRAME.registerComponent("border1", {
         this.border14 = document.getElementById("wall14").getAttribute("position");
         this.border15= document.getElementById("wall15").getAttribute("position");
         this.border16 = document.getElementById("wall16").getAttribute("position");
-
-
-
-		this.el.addEventListener("raycaster-intersected", function () {
-			console.log("je hebt de  muur geraakt")
-			this.intersect = true;
-		});
-		this.el.addEventListener("raycaster-intersected-cleared", function () {
-			this.intersect = false;
-		});
 	},
 
 	vibrate: function () {

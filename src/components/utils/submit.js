@@ -1,13 +1,5 @@
 function submit() {
-        let height = document.getElementById("height").value;
-        let width = document.getElementById("width").value;
-
-
-        let data = {
-            height: height,
-            width: width
-        }
-        sessionStorage.setItem("settings", JSON.stringify(data));
+        sessionStorage.setItem("versie", 1);
     }
    
 window.onload = function () {

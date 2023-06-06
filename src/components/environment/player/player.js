@@ -1,32 +1,58 @@
 AFRAME.registerComponent("player", {
 	schema: {
-		device: {type: "string"},
-		visual: {type: "string"}
+		versie: {type: "string"}
 	},
+
+	 versie1: function(e) {
+		console.log(e.detail.els[0]);
+		let object = e.detail.els[0];
+			object.components.sound.playSound();
+	
+	
+	},
+
+	versie2: function() {
+		console.log("ik ben aan het trillen");
+			document.getElementById("right").components.haptics.pulse(1, 50);
+	},
+
+	clickSound: function(e) {
+		let object = e.detail.intersectedEl;
+		object.components.sound.playSound();
+	},
+
 	init: function () {
 		const element = this.el;
-		let visual = "";
 
-		switch (this.data.device) {
-		case "pc" :
-			element.innerHTML =
-                    "<a-entity id=\"camera\" position=\"0 1 0\" camera kinematic-body look-controls wasd-controls>\n" +
-                    "<a-cursor></a-cursor>\n" +
-                    "     </a-entity>\n" +
-                    "</a-entity>";
-			break;
-		case "oculus" :
-			element.innerHTML =
-				"<a-entity id=\"rig\" kinematic-body=\"shape:mesh\">\n" +
-				"    <a-entity id=\"camera\" position=\"0 0 0\">\n" +
-				"        <a-entity camera look-controls>"+ visual +"</a-entity>\n" +
-				"    </a-entity>\n" +
-				"    <a-entity id=\"left\" haptics vibration oculus-touch-controls=\"hand: left\" ></a-entity>\n" +
-				"    <a-entity id=\"right\" haptics vibration oculus-touch-controls=\"hand: right\" laser-controls raycaster=\"lineColor: red; lineOpacity: 0.5; far: 1.6; objects: .interactable\"></a-entity>\n" +
-				"</a-entity>";
-			break;
-		default:
+		element.addEventListener("bbuttonup", () => {
+				console.log("enter toets werkt")
+				if(this.data.versie === "1") {
+					element.setAttribute("player", "versie: 2");
+					console.log(this.data.versie);
+					return;
+				}
+				element.setAttribute("player", "versie: 1");
+				console.log(this.data.versie);
+			});
+		
+	},
 
+	update: function(oldData) {
+		const element = this.el;
+
+		element.addEventListener("raycaster-intersection", this.versie1);
+
+		if(this.data.versie === "1") {
+			element.removeEventListener("raycaster-intersection", this.versie2);
+			element.removeEventListener("click", this.clickSound);
+			element.addEventListener("raycaster-intersection", this.versie1)
 		}
+
+		else {
+			element.removeEventListener("raycaster-intersection", this.versie1);
+			element.addEventListener("raycaster-intersection", this.versie2);
+			element.addEventListener("click", this.clickSound);
+		}
+
 	}
 })
