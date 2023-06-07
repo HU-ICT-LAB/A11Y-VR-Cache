@@ -1,6 +1,7 @@
 AFRAME.registerComponent("own-closet", {
     schema: {
-        open: {type: "string"}
+        open: {type: "string"},
+        sleutel: {type: "string"}
     },
 
     init: function () {
@@ -13,7 +14,7 @@ AFRAME.registerComponent("own-closet", {
 
     update: function(oldData) {
         this.el.addEventListener("click", () => {
-            if(sessionStorage.getItem("keyFound") === "false") {
+            if(this.el.data.sleutel === "true") {
                 if(this.data.open === "false") {
                     this.el.setAttribute("sound", "src: #kastopen;");
                     this.el.setAttribute("animation-mixer", "clip: 001; timeScale: 0.03;");
