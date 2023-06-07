@@ -24,7 +24,7 @@ AFRAME.registerComponent("player", {
 	init: function () {
 		const element = this.el;
 
-		element.addEventListener("bbuttonup", () => {
+		element.addEventListener("xbuttonup", () => {
 				console.log("enter toets werkt")
 				if(this.data.versie === "1") {
 					element.setAttribute("player", "versie: 2");
