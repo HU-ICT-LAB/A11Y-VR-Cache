@@ -1,0 +1,11 @@
+Model Information:
+* title:	Office Plant 1
+* source:	https://sketchfab.com/3d-models/office-plant-1-3c28dc89b31d43ed82dab16b33dbd182
+* author:	VIS-All-3D (https://sketchfab.com/VIS-All)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Office Plant 1" (https://sketchfab.com/3d-models/office-plant-1-3c28dc89b31d43ed82dab16b33dbd182) by VIS-All-3D (https://sketchfab.com/VIS-All) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
