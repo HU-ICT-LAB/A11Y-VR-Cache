@@ -1,0 +1,11 @@
+Model Information:
+* title:	Key
+* source:	https://sketchfab.com/3d-models/key-a4aca11a2259462f8735a60eead33962
+* author:	eucocker (https://sketchfab.com/eucocker)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Key" (https://sketchfab.com/3d-models/key-a4aca11a2259462f8735a60eead33962) by eucocker (https://sketchfab.com/eucocker) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
