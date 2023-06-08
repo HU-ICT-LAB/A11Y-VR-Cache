@@ -6,7 +6,7 @@ AFRAME.registerComponent("own-closet", {
 
     init: function () {
         this.el.setAttribute("class", "interactable");
-        this.el.setAttribute("own-closet", "open: false");
+        this.el.setAttribute("own-closet", "open: false; sleutel: false;");
         this.el.setAttribute("id", "closet");
         this.el.setAttribute("sound", "src: #kast;");
    
@@ -14,7 +14,7 @@ AFRAME.registerComponent("own-closet", {
 
     update: function(oldData) {
         this.el.addEventListener("click", () => {
-            if(this.el.data.sleutel === "true") {
+            if(this.data.sleutel === "true") {
                 if(this.data.open === "false") {
                     this.el.setAttribute("sound", "src: #kastopen;");
                     this.el.setAttribute("animation-mixer", "clip: 001; timeScale: 0.03;");
