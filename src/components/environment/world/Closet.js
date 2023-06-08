@@ -12,7 +12,7 @@ AFRAME.registerComponent("own-closet", {
 	},
 
     update: function(oldData) {
-        this.el.addEventListener("bbuttondown", () => {
+        this.el.addEventListener("abuttondown", () => {
             if(sessionStorage.getItem("keyFound") === "false") {
                 if(this.data.open === "false") {
                     this.el.setAttribute("sound", "src: #kastopen;");
