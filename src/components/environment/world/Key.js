@@ -9,22 +9,21 @@ AFRAME.registerComponent("key", {
                 el.setAttribute("id", "key");
                 el.setAttribute( "sound", "src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 40");
 
-                this.el.addEventListener("click", () => { 
-                        // document.getElementById("closet").setAttribute("own-closet", "open: false; sleutel: true")
+                this.el.addEventListener("click", () => {
                         sessionStorage.setItem("keyFound", "true")
                         this.el.setAttribute("key", "keyFound: true")
         })
-        
-
         },
-
-        //when clicked -> keyFound == true
-        //if keyFound == true -> key disappears
 
         update: function (oldData) {
                 if (this.data.keyFound === "true") {
                         console.log("sleutel gevonden")
-                        //key disappears
+                        el.setAttribute( "sound", "src: #cacheGevonden");
+                        document.getElementById("cacheGevonden").components.sound.playSound();
+                        document.getElementById("key").remove() //?
+                        //vervang sound attribute met gevonden geluid (cacheGevonden.mp3)
+                        //speel geluid eenmalig af
+                        //key verdwijnt (html tag eraf halen)
                 }
         }
 })
