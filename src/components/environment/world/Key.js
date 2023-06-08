@@ -10,7 +10,8 @@ AFRAME.registerComponent("key", {
                 el.setAttribute("sound", "src: #keySound");
 
                 this.el.addEventListener("click", () => { 
-                        document.getElementById("closet").setAttribute("own-closet", "open: false; sleutel: true;")
+                        // document.getElementById("closet").setAttribute("own-closet", "open: false; sleutel: true")
+                        sessionStorage.setItem("keyFound", "true")
                         this.el.setAttribute("key", "keyFound: true")
         })
         
