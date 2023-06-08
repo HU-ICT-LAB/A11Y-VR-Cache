@@ -6,10 +6,13 @@ AFRAME.registerComponent("player", {
 	 versie1: function(e) {
 		console.log(e.detail.els[0]);
 		let object = e.detail.els[0];
-		if(object.components.id === "key") {
+		if(object.id === "key") {
 			document.getElementById("keySound").components.sound.playSound();
 		}
-		object.components.sound.playSound();
+		else{
+			object.components.sound.playSound();
+		}
+		
 	
 	
 	},
