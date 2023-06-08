@@ -7,7 +7,7 @@ AFRAME.registerComponent("key", {
                 const el = this.el;
                 el.setAttribute("class", "interactable");
                 el.setAttribute("id", "key");
-                el.setAttribute("sound", "src: #keySound");
+                el.setAttribute( "sound", "src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 40");
 
                 this.el.addEventListener("click", () => { 
                         // document.getElementById("closet").setAttribute("own-closet", "open: false; sleutel: true")
