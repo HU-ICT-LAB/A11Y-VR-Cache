@@ -6,7 +6,10 @@ AFRAME.registerComponent("player", {
 	 versie1: function(e) {
 		console.log(e.detail.els[0]);
 		let object = e.detail.els[0];
-			object.components.sound.playSound();
+		if(object.components.id === "key") {
+			document.getElementById("keySound").components.sound.playSound();
+		}
+		object.components.sound.playSound();
 	
 	
 	},
@@ -18,6 +21,9 @@ AFRAME.registerComponent("player", {
 
 	clickSound: function(e) {
 		let object = e.detail.intersectedEl;
+		if(object.components.id === "key") {
+			document.getElementById("keySound").components.sound.playSound();
+		}
 		object.components.sound.playSound();
 	},
 
