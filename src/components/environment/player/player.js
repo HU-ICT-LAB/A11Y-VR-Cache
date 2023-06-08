@@ -24,7 +24,7 @@ AFRAME.registerComponent("player", {
 
 	clickSound: function(e) {
 		let object = e.detail.intersectedEl;
-		if(object.components.id === "key") {
+		if(object.id === "key") {
 			document.getElementById("keySound").components.sound.playSound();
 		}
 		object.components.sound.playSound();
