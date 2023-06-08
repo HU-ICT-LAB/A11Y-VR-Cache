@@ -6,9 +6,14 @@ AFRAME.registerComponent("key", {
         init: function () {
                 const el = this.el;
                 el.setAttribute("class", "interactable");
-                this.el.setAttribute("key", "keyFound: false");
                 el.setAttribute("id", "key");
                 el.setAttribute("sound", "src: #keySound");
+
+                this.el.addEventListener("click", () => { 
+                        document.getElementById("closet").setAttribute("own-closet", "open: false; sleutel: true;")
+                        this.el.setAttribute("key", "keyFound: true")
+        })
+        
 
         },
 
@@ -16,7 +21,9 @@ AFRAME.registerComponent("key", {
         //if keyFound == true -> key disappears
 
         update: function (oldData) {
-                this.el.addEventListener("click", () => { this.el.setAttribute("key", "keyFound: true"
-                ) })
+                if (this.data.keyFound === "true") {
+                        console.log("sleutel gevonden")
+                        //key disappears
+                }
         }
 })
