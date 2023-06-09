@@ -66,7 +66,7 @@ AFRAME.registerComponent("player", {
 		const element = this.el;
 
 		element.addEventListener("raycaster-intersection", this.versie1);
-		element.addEventListener("abuttonup", this.interactable);
+		element.addEventListener("abuttondown", this.interactable);
 
 		if(this.data.versie === "1") {
 			element.removeEventListener("raycaster-intersection", this.versie2);
