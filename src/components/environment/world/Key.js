@@ -9,8 +9,7 @@ AFRAME.registerComponent("key", {
                 el.setAttribute("id", "key");
                 el.setAttribute( "sound", "src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 40");
 
-                this.el.addEventListener("keyEvent", () => {
-                        console.log("key gepakt");
+                this.el.addEventListener("click", () => {
                         sessionStorage.setItem("keyFound", "true")
                         this.el.setAttribute("key", "keyFound: true")
         })
