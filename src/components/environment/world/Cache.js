@@ -12,7 +12,7 @@ AFRAME.registerComponent('cache-interaction', {
         const el = this.el;
         if(this.data.isAllowed === "true") {
             el.setAttribute( "sound", "src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 40");
-            el.addEventListener("gripup", () => {
+            el.addEventListener("click", () => {
                 document.getElementById("cacheGevonden").components.sound.playSound();
                 sessionStorage.clear();
                 setTimeout(() => {window.location.href = '../../index.html'}, 1500);
