@@ -35,7 +35,10 @@ AFRAME.registerComponent("own-closet", {
 
     tick: function() {
             if(sessionStorage.getItem("keyFound") === "true") {
-                this.el.setAttribute("own-closet", "open: false; sleutel: true");
+                if(this.data.open === "false") {
+                    this.el.setAttribute("own-closet", "open: false; sleutel: true");
+                }
+                
             }
     }
 })
