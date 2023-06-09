@@ -6,7 +6,7 @@ AFRAME.registerComponent("own-closet", {
 
     init: function () {
         this.el.setAttribute("class", "interactable");
-        this.el.setAttribute("own-closet", "open: false; sleutel: false");
+        this.el.setAttribute("own-closet", "open: false; sleutel: false;")
         this.el.setAttribute("id", "closet");
         this.el.setAttribute("sound", "src: #kast;");
     },
