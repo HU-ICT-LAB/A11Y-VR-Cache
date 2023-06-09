@@ -34,7 +34,7 @@ AFRAME.registerComponent("player", {
 		const element = this.el;
 
 		element.addEventListener(
-			"gripup", () => {
+			"bbuttonup", () => {
 				console.log("enter toets werkt")
 				if(this.data.versie === "1") {
 					element.setAttribute("player", "versie: 2");
@@ -54,14 +54,14 @@ AFRAME.registerComponent("player", {
 
 		if(this.data.versie === "1") {
 			element.removeEventListener("raycaster-intersection", this.versie2);
-			element.removeEventListener("abuttondown", this.clickSound);
+			element.removeEventListener("click", this.clickSound);
 			element.addEventListener("raycaster-intersection", this.versie1)
 		}
 
 		else {
 			element.removeEventListener("raycaster-intersection", this.versie1);
 			element.addEventListener("raycaster-intersection", this.versie2);
-			element.addEventListener("abuttondown", this.clickSound);
+			element.addEventListener("click", this.clickSound);
 		}
 
 	}
