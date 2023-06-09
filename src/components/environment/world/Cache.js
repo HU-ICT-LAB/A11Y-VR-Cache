@@ -9,7 +9,8 @@ AFRAME.registerComponent('cache-interaction', {
     },
 
     update: function(oldData) {
-        const el = this.el;
+    this.el.addEventListener("cacheEvent", ()=>{
+         const el = this.el;
         if(this.data.isAllowed === "true") {
             el.setAttribute( "sound", "src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 40");
             el.addEventListener("gripup", () => {
@@ -24,6 +25,6 @@ AFRAME.registerComponent('cache-interaction', {
                 document.getElementById("right").components.haptics.pulse(15, 50);
             });
         }
-     
+    })   
     }
 })
