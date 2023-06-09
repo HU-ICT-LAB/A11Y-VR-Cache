@@ -9,16 +9,16 @@ AFRAME.registerComponent("key", {
         el.setAttribute("id", "key");
         el.setAttribute( "sound", "src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 40");
 
-        document.getElementById("right").addEventListener("abuttonup", () => {
-            var intersectedObjects = rightHand.components.raycaster.intersectedEls;
+        document.getElementById("right").addEventListener("abuttondown", () => {
+            var intersectedObjects = document.getElementById("right").components.raycaster.intersectedEls;
 
             // If there are any intersected objects, select the first one
             if (intersectedObjects.length > 0) {
                 var selectedObject = intersectedObjects[0];
 
                 if(selectedObject.id === "key") {
-                        sessionStorage.setItem("keyFound", "true")
-                        this.el.setAttribute("key", "keyFound: true")
+                    sessionStorage.setItem("keyFound", "true")
+                    this.el.setAttribute("key", "keyFound: true")
                 }
             }
         })
@@ -27,13 +27,13 @@ AFRAME.registerComponent("key", {
     update: function (oldData) {
         const el = this.el;
         if (this.data.keyFound === "true") {
-            console.log("sleutel gevonden")
-            el.setAttribute( "sound", "src: #cacheGevonden");
-            document.getElementById("cacheGevonden").components.sound.playSound();
-            document.getElementById("key").remove() //?
-            //vervang sound attribute met gevonden geluid (cacheGevonden.mp3)
-            //speel geluid eenmalig af
-            //key verdwijnt (html tag eraf halen)
+                console.log("sleutel gevonden")
+                el.setAttribute( "sound", "src: #cacheGevonden");
+                document.getElementById("cacheGevonden").components.sound.playSound();
+                document.getElementById("key").remove() //?
+                //vervang sound attribute met gevonden geluid (cacheGevonden.mp3)
+                //speel geluid eenmalig af
+                //key verdwijnt (html tag eraf halen)
         }
     }
 })
