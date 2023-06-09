@@ -6,7 +6,13 @@ AFRAME.registerComponent("player", {
 	 versie1: function(e) {
 		console.log(e.detail.els[0]);
 		let object = e.detail.els[0];
+		if(object.id === "key") {
+			document.getElementById("keySound").components.sound.playSound();
+		}
+		else{
 			object.components.sound.playSound();
+		}
+		
 	
 	
 	},
@@ -18,13 +24,17 @@ AFRAME.registerComponent("player", {
 
 	clickSound: function(e) {
 		let object = e.detail.intersectedEl;
+		if(object.id === "key") {
+			document.getElementById("keySound").components.sound.playSound();
+		}
 		object.components.sound.playSound();
 	},
 
 	init: function () {
 		const element = this.el;
 
-		element.addEventListener("bbuttonup", () => {
+		element.addEventListener(
+			"bbuttonup", () => {
 				console.log("enter toets werkt")
 				if(this.data.versie === "1") {
 					element.setAttribute("player", "versie: 2");
