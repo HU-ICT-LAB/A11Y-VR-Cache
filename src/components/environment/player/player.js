@@ -30,21 +30,21 @@ AFRAME.registerComponent("player", {
 		object.components.sound.playSound();
 	},
 
-	interactable: function(e) {
-		console.log("interactable");
-		let object = e.detail.intersectedEl;
-		if(object.id === "key") {
-			object.emit("keyEvent");
-		}
-		if(object.id === "closet"){
-			console.log("kast interactable");
-			object.emit("closetEvent")
-		}
-		if(object.id === "cache"){
-			console.log("cache interactable");
-			object.emit("cacheEvent")
-		}
-	},
+	// interactable: function(e) {
+	// 	console.log("interactable");
+	// 	let object = e.detail.intersectedEl;
+	// 	if(object.id === "key") {
+	// 		object.emit("keyEvent");
+	// 	}
+	// 	if(object.id === "closet"){
+	// 		console.log("kast interactable");
+	// 		object.emit("closetEvent")
+	// 	}
+	// 	if(object.id === "cache"){
+	// 		console.log("cache interactable");
+	// 		object.emit("cacheEvent")
+	// 	}
+	// },
 
 	init: function () {
 		const element = this.el;
@@ -60,13 +60,28 @@ AFRAME.registerComponent("player", {
 				element.setAttribute("player", "versie: 1");
 				console.log(this.data.versie);
 			});
+
+		element.addEventListener("abuttonup", function(e){
+		let object = e.detail.intersectedEl;
+		if(object.id === "key") {
+			object.emit("keyEvent");
+		}
+		if(object.id === "closet"){
+			console.log("kast interactable");
+			object.emit("closetEvent")
+		}
+		if(object.id === "cache"){
+			console.log("cache interactable");
+			object.emit("cacheEvent")
+		}
+		})
 	},
 
 	update: function(oldData) {
 		const element = this.el;
 
 		element.addEventListener("raycaster-intersection", this.versie1);
-		element.addEventListener("abuttonup", this.interactable);
+		// element.addEventListener("abuttonup", this.interactable);
 
 		if(this.data.versie === "1") {
 			element.removeEventListener("raycaster-intersection", this.versie2);
