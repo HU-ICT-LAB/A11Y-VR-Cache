@@ -6,11 +6,10 @@ AFRAME.registerComponent("own-closet", {
 
     init: function () {
         this.el.setAttribute("class", "interactable");
-        this.el.setAttribute("own-closet", "open: false; sleutel: false;");
+        this.el.setAttribute("own-closet", "open: false; sleutel: false;")
         this.el.setAttribute("id", "closet");
         this.el.setAttribute("sound", "src: #kast;");
-   
-	},
+    },
 
     update: function(oldData) {
         this.el.addEventListener("click", () => {
@@ -32,6 +31,12 @@ AFRAME.registerComponent("own-closet", {
                 this.el.setAttribute("sound", "src: #kast;");
             }
         });
+    },
+
+    tick: function() {
+            if(sessionStorage.getItem("keyFound") === "true") {
+                this.el.setAttribute("own-closet", "open: false; sleutel: true");
+            }
     }
 })
 
