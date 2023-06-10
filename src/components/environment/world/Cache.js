@@ -22,7 +22,7 @@ AFRAME.registerComponent('cache-interaction', {
             el.addEventListener("raycaster-intersected", () => {
                 console.log("controller op cache");
 
-                var pulseDelay = 400;
+                var pulseDelay = 500;
 
                 document.getElementById("right").components.haptics.pulse(0.5, 100);
 
