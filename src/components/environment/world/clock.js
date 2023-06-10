@@ -4,7 +4,9 @@ AFRAME.registerComponent("clock", {
         const el = this.el;
         el.setAttribute("animation-mixer", "clip: Animation; timeScale: 1");
 
-        el.setAttribute("sound", "src", "#clockSound");
+        el.setAttribute("class", "interactable");
+        el.setAttribute("id", "clock");
+        el.setAttribute("sound", "src", "#ticking");
         el.setAttribute("sound", "autoplay", true);
         el.setAttribute("sound", "loop", true);
 	}

@@ -27,8 +27,9 @@ AFRAME.registerComponent("player", {
                 setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
                 setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
             }
-        }
-		else{
+        } else if (object.id === "clock") {
+			document.getElementById("clockSound").components.sound.playSound();
+		} else {
 			object.components.sound.playSound();
 		}
 		
@@ -70,6 +71,8 @@ AFRAME.registerComponent("player", {
 		let object = e.detail.intersectedEl;
 		if(object.id === "key") {
 			document.getElementById("keySound").components.sound.playSound();
+		} else if(object.id === "clock"){
+			document.getElementById("clockSound").components.sound.playSound();
 		}
 		object.components.sound.playSound();
 	},
