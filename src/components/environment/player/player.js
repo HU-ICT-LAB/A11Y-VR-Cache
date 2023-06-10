@@ -10,8 +10,7 @@ AFRAME.registerComponent("player", {
 			document.getElementById("keySound").components.sound.playSound();
 		} else if (object.id === "clock") {
 			document.getElementById("clockSound").components.sound.playSound();
-		} 
-		else {
+		} else {
 			object.components.sound.playSound();
 		}
 		
