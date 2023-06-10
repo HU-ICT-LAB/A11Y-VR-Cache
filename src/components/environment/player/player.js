@@ -9,7 +9,7 @@ AFRAME.registerComponent("player", {
 		if(object.id === "key") {
 			document.getElementById("keySound").components.sound.playSound();
 
-            var pulseDelay = 500;
+            var pulseDelay = 750;
 
             document.getElementById("right").components.haptics.pulse(0.5, 100);
 
@@ -18,13 +18,15 @@ AFRAME.registerComponent("player", {
             setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
 		}
         else if(object.id === "closet") {
-            var pulseDelay = 500;
+            if(object.data.open === "false") {
+                var pulseDelay = 750;
 
-            document.getElementById("right").components.haptics.pulse(0.5, 100);
+                document.getElementById("right").components.haptics.pulse(0.5, 100);
 
-            setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 1);
-            setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
-            setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 1);
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
+            }
         }
 		else{
 			object.components.sound.playSound();
@@ -39,14 +41,25 @@ AFRAME.registerComponent("player", {
 
         let object = e.detail.els[0];
 
-        if(object.id === "closet" || object.id === "key") {
-            var pulseDelay = 500;
+        if(object.id === "key") {
+            var pulseDelay = 750;
 
             document.getElementById("right").components.haptics.pulse(0.5, 100);
 
             setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 1);
             setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
             setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
+        }
+        else if(object.id === "closet") {
+            if(object.data.open === "false") {
+                var pulseDelay = 750;
+
+                document.getElementById("right").components.haptics.pulse(0.5, 100);
+
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 1);
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
+            }
         }
         else {
 		    document.getElementById("right").components.haptics.pulse(1, 50);
