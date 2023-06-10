@@ -8,7 +8,26 @@ AFRAME.registerComponent("player", {
 		let object = e.detail.els[0];
 		if(object.id === "key") {
 			document.getElementById("keySound").components.sound.playSound();
-		} else if (object.id === "clock") {
+
+            var pulseDelay = 750;
+
+            document.getElementById("right").components.haptics.pulse(0.5, 100);
+
+            setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 1);
+            setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
+            setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
+		}
+        else if(object.id === "closet") {
+            if(sessionStorage.getItem("closetOpened") != "true") {
+                var pulseDelay = 750;
+
+                document.getElementById("right").components.haptics.pulse(0.5, 100);
+
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 1);
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
+            }
+        } else if (object.id === "clock") {
 			document.getElementById("clockSound").components.sound.playSound();
 		} else {
 			object.components.sound.playSound();
@@ -18,9 +37,34 @@ AFRAME.registerComponent("player", {
 	
 	},
 
-	versie2: function() {
+	versie2: function(e) {
 		console.log("ik ben aan het trillen");
-			document.getElementById("right").components.haptics.pulse(1, 50);
+
+        let object = e.detail.els[0];
+
+        if(object.id === "key") {
+            var pulseDelay = 750;
+
+            document.getElementById("right").components.haptics.pulse(0.5, 100);
+
+            setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 1);
+            setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
+            setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
+        }
+        else if(object.id === "closet") {
+            if(sessionStorage.getItem("closetOpened") != "true") {
+                var pulseDelay = 750;
+
+                document.getElementById("right").components.haptics.pulse(0.5, 100);
+
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 1);
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
+            }
+        }
+        else {
+		    document.getElementById("right").components.haptics.pulse(1, 50);
+        }
 	},
 
 	clickSound: function(e) {
