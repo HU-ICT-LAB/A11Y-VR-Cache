@@ -45,7 +45,7 @@ AFRAME.registerComponent("player", {
 				console.log(this.data.versie);
 			});
 		
-			element.addEventListener("abuttonup", function(e){
+			document.getElementById("right").addEventListener("abuttonup", function(e){
 				console.log(e.detail.intersectedEl);
 				let object = e.detail.intersectedEl;
 				if(object.id === "key") {
@@ -59,8 +59,7 @@ AFRAME.registerComponent("player", {
 					console.log("cache interactable");
 					object.emit("cacheEvent")
 				}
-				})
-		
+				});
 	},
 
 	update: function(oldData) {
