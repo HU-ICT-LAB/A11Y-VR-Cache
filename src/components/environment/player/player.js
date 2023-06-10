@@ -18,7 +18,7 @@ AFRAME.registerComponent("player", {
             setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
 		}
         else if(object.id === "closet") {
-            if(object.data.open === "false") {
+            if(sessionStorage.getItem("closetOpened") != "true") {
                 var pulseDelay = 750;
 
                 document.getElementById("right").components.haptics.pulse(0.5, 100);
@@ -51,7 +51,7 @@ AFRAME.registerComponent("player", {
             setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
         }
         else if(object.id === "closet") {
-            if(object.data.open === "false") {
+            if(sessionStorage.getItem("closetOpened") != "true") {
                 var pulseDelay = 750;
 
                 document.getElementById("right").components.haptics.pulse(0.5, 100);
