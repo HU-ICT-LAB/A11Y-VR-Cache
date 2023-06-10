@@ -21,7 +21,14 @@ AFRAME.registerComponent('cache-interaction', {
     
             el.addEventListener("raycaster-intersected", () => {
                 console.log("controller op cache");
-                document.getElementById("right").components.haptics.pulse(15, 50);
+
+                var pulseDelay = 400;
+
+                document.getElementById("right").components.haptics.pulse(0.5, 100);
+
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 1);
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
+                setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
             });
         }
      
