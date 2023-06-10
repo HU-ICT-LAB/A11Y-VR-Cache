@@ -46,9 +46,10 @@ AFRAME.registerComponent("player", {
 			});
 		
 			document.getElementById("right").addEventListener("abuttonup", function(e){
-				console.log(e.detail.intersectedEl);
-				let object = e.detail.intersectedEl;
-				if(object.id === "key") {
+				var intersectedObjects = document.getElementById("right").components.raycaster.intersectedEls;
+				if (intersectedObjects.length > 0) {
+					var object = intersectedObjects[0];
+			if(object.id === "key") {
 					object.emit("keyEvent");
 				}
 				if(object.id === "closet"){
@@ -58,6 +59,7 @@ AFRAME.registerComponent("player", {
 				if(object.id === "cache"){
 					console.log("cache interactable");
 					object.emit("cacheEvent")
+				}
 				}
 				});
 	},
