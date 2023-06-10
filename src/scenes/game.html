@@ -54,8 +54,9 @@
          <a-sound id="klikkast" src="../assets/sounds/Klik om kast te open.mp3" preload></a-sound>
          <a-sound id="bedSound" src="../assets/sounds/Bed.mp3" preload></a-sound>
          <a-sound id="plantSound" src="../assets/sounds/Plant.mp3" preload></a-sound>
-         <a-sound id="clockSound" src="../assets/sounds/clock.mp3" preload></a-sound>
+         <a-sound id="ticking" src="../assets/sounds/clock.mp3" preload></a-sound>
          <a-sound id="keySound" src="../assets/sounds/Key.mp3" preload></a-sound>
+         <a-sound id="clockSound" src="../assets/sounds/klok.mp3" preload></a-sound>
 
          <!-- models -->
          <a-asset-item id="treasure" src="../assets/3DModels/treasureBox/scene.gltf"></a-asset-item>
@@ -71,7 +72,7 @@
 
       <!-- CAMERA/PLAYER -->
       <a-entity player="versie: 1" haptics id="camera" camera look-controls wasd-controls="acceleration: 100;" position="0 1 0" kinematic-body border-collide name="1">
-        <!-- <a-cursor raycaster="objects: .interactable"></a-cursor> -->
+        <a-cursor raycaster="objects: .interactable"></a-cursor>
       </a-entity>
       <a-entity player="versie: 1" id="right" haptics oculus-touch-controls="hand: right" super-hands laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 2; objects: .interactable" kinematic-body></a-entity>
 

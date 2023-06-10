@@ -8,8 +8,10 @@ AFRAME.registerComponent("player", {
 		let object = e.detail.els[0];
 		if(object.id === "key") {
 			document.getElementById("keySound").components.sound.playSound();
-		}
-		else{
+		} else if (object.id === "clock") {
+			document.getElementById("clockSound").components.sound.playSound();
+		} 
+		else {
 			object.components.sound.playSound();
 		}
 		
@@ -26,6 +28,8 @@ AFRAME.registerComponent("player", {
 		let object = e.detail.intersectedEl;
 		if(object.id === "key") {
 			document.getElementById("keySound").components.sound.playSound();
+		} else if(object.id === "clock"){
+			document.getElementById("clockSound").components.sound.playSound();
 		}
 		object.components.sound.playSound();
 	},
