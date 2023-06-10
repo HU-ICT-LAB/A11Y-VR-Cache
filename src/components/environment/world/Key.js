@@ -9,18 +9,9 @@ AFRAME.registerComponent("key", {
         el.setAttribute("id", "key");
         el.setAttribute( "sound", "src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 40");
 
-        document.getElementById("right").addEventListener("abuttondown", () => {
-            var intersectedObjects = document.getElementById("right").components.raycaster.intersectedEls;
-
-            // If there are any intersected objects, select the first one
-            if (intersectedObjects.length > 0) {
-                var selectedObject = intersectedObjects[0];
-
-                if(selectedObject.id === "key") {
-                    sessionStorage.setItem("keyFound", "true")
-                    this.el.setAttribute("key", "keyFound: true")
-                }
-            }
+                this.el.addEventListener("keyEvent", () => {
+                        sessionStorage.setItem("keyFound", "true")
+                        this.el.setAttribute("key", "keyFound: true")
         })
     },
 

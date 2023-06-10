@@ -45,6 +45,23 @@ AFRAME.registerComponent("player", {
 				console.log(this.data.versie);
 			});
 		
+			document.getElementById("right").addEventListener("abuttonup", function(e){
+				var intersectedObjects = document.getElementById("right").components.raycaster.intersectedEls;
+				if (intersectedObjects.length > 0) {
+					var object = intersectedObjects[0];
+			if(object.id === "key") {
+					object.emit("keyEvent");
+				}
+				if(object.id === "closet"){
+					console.log("kast interactable");
+					object.emit("closetEvent")
+				}
+				if(object.id === "cache"){
+					console.log("cache interactable");
+					object.emit("cacheEvent")
+				}
+				}
+				});
 	},
 
 	update: function(oldData) {
