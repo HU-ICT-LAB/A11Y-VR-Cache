@@ -85,14 +85,16 @@ AFRAME.registerComponent("player", {
 		const element = this.el;
 
 		element.addEventListener(
-			"bbuttondown", () => {
+			"bbuttonup", () => {
 				console.log("enter toets werkt")
 				if(this.data.versie === "1") {
 					element.setAttribute("player", "versie: 2");
 					console.log(this.data.versie);
+					document.getElementById("versie2").components.sound.playSound();
 					return;
 				}
 				element.setAttribute("player", "versie: 1");
+				document.getElementById("versie1").components.sound.playSound();
 				console.log(this.data.versie);
 			});
 		
