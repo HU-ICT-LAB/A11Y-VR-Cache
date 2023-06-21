@@ -18,15 +18,19 @@ AFRAME.registerComponent("player", {
             setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
 		}
         else if(object.id === "closet") {
-            if(sessionStorage.getItem("closetOpened") != "true") {
+            if(sessionStorage.getItem("closetOpened") !== "true") {
                 var pulseDelay = 750;
 
                 document.getElementById("right").components.haptics.pulse(0.5, 100);
+				object.components.sound.playSound();
 
                 setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 1);
                 setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
                 setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
             }
+			else {
+				object.components.sound.playSound();
+			}
         } else if (object.id === "clock") {
 			document.getElementById("clockSound").components.sound.playSound();
 		} else {
@@ -52,7 +56,7 @@ AFRAME.registerComponent("player", {
             setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
         }
         else if(object.id === "closet") {
-            if(sessionStorage.getItem("closetOpened") != "true") {
+            if(sessionStorage.getItem("closetOpened") !== "true") {
                 var pulseDelay = 750;
 
                 document.getElementById("right").components.haptics.pulse(0.5, 100);
@@ -81,7 +85,7 @@ AFRAME.registerComponent("player", {
 		const element = this.el;
 
 		element.addEventListener(
-			"bbuttonup", () => {
+			"bbuttondown", () => {
 				console.log("enter toets werkt")
 				if(this.data.versie === "1") {
 					element.setAttribute("player", "versie: 2");
