@@ -1,11 +1,11 @@
 Model Information:
-* title:	Key
-* source:	https://sketchfab.com/3d-models/key-a4aca11a2259462f8735a60eead33962
-* author:	eucocker (https://sketchfab.com/eucocker)
+* title:	Door key
+* source:	https://sketchfab.com/3d-models/door-key-834f4e75590d432f96bc97be5065f6f6
+* author:	SusanKing (https://sketchfab.com/krolzuzannapl)
 
 Model License:
-* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
-* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Key" (https://sketchfab.com/3d-models/key-a4aca11a2259462f8735a60eead33962) by eucocker (https://sketchfab.com/eucocker) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+This work is based on "Door key" (https://sketchfab.com/3d-models/door-key-834f4e75590d432f96bc97be5065f6f6) by SusanKing (https://sketchfab.com/krolzuzannapl) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
