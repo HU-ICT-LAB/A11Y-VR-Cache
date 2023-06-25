@@ -30,6 +30,7 @@
     <script src="../components/environment/world/Plant.js"></script>
     <script src="../components/environment/world/clock.js"></script>
     <script src="../components/environment/world/Key.js"></script>
+    <script src="../components/environment/world/Door.js"></script>
   </head>
   <body>
 
@@ -59,6 +60,7 @@
          <a-sound id="clockSound" src="../assets/sounds/klok.mp3" preload></a-sound>
          <a-sound id="versie1" src="../assets/sounds/versie1.mp3" preload></a-sound>
          <a-sound id="versie2" src="../assets/sounds/versie2.mp3" preload></a-sound>
+         <a-sound id="deur" src="../assets/sounds/Deur.mp3" preload></a-sound>
 
          <!-- models -->
          <a-asset-item id="treasure" src="../assets/3DModels/treasureBox/scene.gltf"></a-asset-item>
@@ -74,7 +76,7 @@
 
       <!-- CAMERA/PLAYER -->
       <a-entity player="versie: 1" haptics id="camera" camera look-controls wasd-controls="acceleration: 100;" position="0 1 0" kinematic-body border-collide name="1">
-        <!-- <a-cursor raycaster="objects: .interactable"></a-cursor> -->
+        <a-cursor raycaster="objects: .interactable"></a-cursor>
       </a-entity>
       <a-entity player="versie: 1" id="right" haptics oculus-touch-controls="hand: right" super-hands laser-controls raycaster="lineColor: red; lineOpacity: 0.5; far: 2; objects: .interactable" kinematic-body></a-entity>
 
@@ -88,6 +90,7 @@
       <a-entity plant rotation="0 90 0" position="1.6 0 -1.5" scale="1 1 1" gltf-model="#plant"></a-entity>
       <a-entity clock position="-0.3 2.1 -2" scale="0.2 0.2 0.2" gltf-model="#clock"></a-entity>
       <a-entity key rotation="90 75 90" position="-1.4 0 -0.3" scale="0.00040 0.00040 0.00040" gltf-model="#key"></a-entity>
+      <a-box exit scale="0.6 1.75 0" position="-0.3 0.8 -1.98"></a-box>
 
       <!-- BORDER -->
       <a-entity id="border" scale="1 1 1">
