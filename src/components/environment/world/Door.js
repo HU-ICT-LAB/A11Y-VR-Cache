@@ -16,8 +16,9 @@ AFRAME.registerComponent('exit', {
         if(this.data.doorKeyFound === "true") {
             this.el.addEventListener("doorEvent", () => {
                 sessionStorage.clear();
-                //TODO: hier moet een geluid komen die vertelt dat de speler het gehaald heeft en dat ie ontsnapt is en dat ie het gehaald heeft en dat het spel hier stopt
-                setTimeout(() => {window.location.href = '../../index.html'}, 2000);
+                document.getElementById("cacheGevonden").components.sound.playSound();
+                setTimeout(() => {document.getElementById("victory").components.sound.playSound()}, 2000);
+                setTimeout(() => {window.location.href = '../../index.html'}, 8000);
             });
         }
     },

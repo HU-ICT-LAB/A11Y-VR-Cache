@@ -14,7 +14,10 @@ AFRAME.registerComponent('cache-interaction', {
             el.setAttribute( "sound", "src: #dichtbijCache; autoplay: true; loop: true; rolloffFactor: 40");
             el.addEventListener("cacheEvent", () => {
                 document.getElementById("cacheGevonden").components.sound.playSound();
-                sessionStorage.setItem("doorKeyFound", "true")
+                sessionStorage.setItem("doorKeyFound", "true");
+                el.removeAttribute("gltf-model")
+                el.setAttribute("material", "opacity: 0;");
+                // el.removeAttribute("cache-interaction");
                 
             });
     
