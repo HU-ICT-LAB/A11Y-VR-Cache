@@ -13,7 +13,7 @@ AFRAME.registerComponent('exit', {
     },
 
     update: function(oldData) {
-            this.el.addEventListener("click", () => {
+            this.el.addEventListener("doorEvent", () => {
                 if(this.data.doorKeyFound === "true") {
                     sessionStorage.clear();
                     document.getElementById("cacheGevonden").components.sound.playSound();
