@@ -39,6 +39,7 @@ AFRAME.registerComponent("player", {
 				object.components.sound.playSound();
 			}
 			else{
+				object.components.sound.playSound();
 				var pulseDelay = 750;
 				document.getElementById("right").components.haptics.pulse(0.5, 100);
 
