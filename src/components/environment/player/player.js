@@ -35,10 +35,6 @@ AFRAME.registerComponent("player", {
 			document.getElementById("clockSound").components.sound.playSound();
 		} 
 		else if(object.id === "door") {
-			if(sessionStorage.getItem("doorKeyFound") !== "true") {
-				object.components.sound.playSound();
-			}
-			else{
 				object.components.sound.playSound();
 				var pulseDelay = 750;
 				document.getElementById("right").components.haptics.pulse(0.5, 100);
@@ -46,7 +42,6 @@ AFRAME.registerComponent("player", {
                 setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 1);
                 setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
                 setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
-			}
 		}
 		else {
 			object.components.sound.playSound();
@@ -82,14 +77,12 @@ AFRAME.registerComponent("player", {
             }
         }
 		else if(object.id === "door") {
-			if(sessionStorage.getItem("doorKeyFound") === "true") {
 				var pulseDelay = 750;
 				document.getElementById("right").components.haptics.pulse(0.5, 100);
 
                 setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 1);
                 setTimeout(() => { document.getElementById("right").components.haptics.pulse(0.5, 100); }, pulseDelay * 2);
                 setTimeout(() => { document.getElementById("right").components.haptics.pulse(1, 100); }, pulseDelay * 3);
-			}
 		}
         else {
 		    document.getElementById("right").components.haptics.pulse(1, 50);

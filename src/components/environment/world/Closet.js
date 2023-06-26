@@ -12,7 +12,7 @@ AFRAME.registerComponent("own-closet", {
     },
 
     update: function(oldData) {
-        this.el.addEventListener("closetEvent", () => {
+        this.el.addEventListener("click", () => {
             if(this.data.sleutel === "true") {
                 if(this.data.open === "false") {
                     this.el.setAttribute("sound", "src: #kastopen;");
@@ -29,6 +29,7 @@ AFRAME.registerComponent("own-closet", {
             }
             else {
                 this.el.setAttribute("sound", "src: #kast;");
+                document.getElementById("kastSleutelNodig").components.sound.playSound();
             }
         });
     },

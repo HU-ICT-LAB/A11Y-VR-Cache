@@ -13,14 +13,17 @@ AFRAME.registerComponent('exit', {
     },
 
     update: function(oldData) {
-        if(this.data.doorKeyFound === "true") {
-            this.el.addEventListener("doorEvent", () => {
-                sessionStorage.clear();
-                document.getElementById("cacheGevonden").components.sound.playSound();
-                setTimeout(() => {document.getElementById("victory").components.sound.playSound()}, 2000);
-                setTimeout(() => {window.location.href = '../../index.html'}, 8000);
+            this.el.addEventListener("click", () => {
+                if(this.data.doorKeyFound === "true") {
+                    sessionStorage.clear();
+                    document.getElementById("cacheGevonden").components.sound.playSound();
+                    setTimeout(() => {document.getElementById("victory").components.sound.playSound()}, 2000);
+                    setTimeout(() => {window.location.href = '../../index.html'}, 8000);
+                }
+                else {
+                    document.getElementById("kistjeNodig").components.sound.playSound();
+                }
             });
-        }
     },
 
     tick: function() {
