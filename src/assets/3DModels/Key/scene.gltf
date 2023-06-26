@@ -3,24 +3,24 @@
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 10601,
+      "count": 3850,
       "max": [
-        118.32018280029297,
-        45.34836196899414,
-        143.47271728515625
+        1.4172999858856201,
+        3.045259952545166,
+        0.16744600236415863
       ],
       "min": [
-        -118.32018280029297,
-        -45.34836196899414,
-        -501.4661865234375
+        -1.4172799587249756,
+        -2.9521899223327637,
+        -5.58793999516638e-07
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "byteOffset": 127212,
+      "byteOffset": 46200,
       "componentType": 5126,
-      "count": 10601,
+      "count": 3850,
       "max": [
         1.0,
         1.0,
@@ -36,17 +36,17 @@
     {
       "bufferView": 3,
       "componentType": 5126,
-      "count": 10601,
+      "count": 3850,
       "max": [
         1.0,
+        0.9934723973274231,
         1.0,
-        0.9999998211860657,
         1.0
       ],
       "min": [
         -1.0,
+        -0.9995137453079224,
         -1.0,
-        -0.999999463558197,
         -1.0
       ],
       "type": "VEC4"
@@ -54,61 +54,61 @@
     {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 10601,
+      "count": 3850,
       "max": [
-        0.9864605069160461,
-        0.9877090454101563
+        1.0,
+        1.0
       ],
       "min": [
-        0.018257582560181618,
-        0.09478437900543213
+        0.0,
+        0.0
       ],
       "type": "VEC2"
     },
     {
       "bufferView": 0,
       "componentType": 5125,
-      "count": 53016,
+      "count": 8028,
       "type": "SCALAR"
     }
   ],
   "asset": {
     "extras": {
-      "author": "eucocker (https://sketchfab.com/eucocker)",
-      "license": "CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)",
-      "source": "https://sketchfab.com/3d-models/key-a4aca11a2259462f8735a60eead33962",
-      "title": "Key"
+      "author": "SusanKing (https://sketchfab.com/krolzuzannapl)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/door-key-834f4e75590d432f96bc97be5065f6f6",
+      "title": "Door key"
     },
-    "generator": "Sketchfab-14.61.0",
+    "generator": "Sketchfab-12.66.0",
     "version": "2.0"
   },
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 212064,
+      "byteLength": 32112,
       "name": "floatBufferViews",
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteLength": 84808,
-      "byteOffset": 212064,
+      "byteLength": 30800,
+      "byteOffset": 32112,
       "byteStride": 8,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 254424,
-      "byteOffset": 296872,
+      "byteLength": 92400,
+      "byteOffset": 62912,
       "byteStride": 12,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 169616,
-      "byteOffset": 551296,
+      "byteLength": 61600,
+      "byteOffset": 155312,
       "byteStride": 16,
       "name": "floatBufferViews",
       "target": 34962
@@ -116,22 +116,16 @@
   ],
   "buffers": [
     {
-      "byteLength": 720912,
+      "byteLength": 216912,
       "uri": "scene.bin"
     }
   ],
-  "extensionsRequired": [
-    "KHR_materials_pbrSpecularGlossiness"
-  ],
-  "extensionsUsed": [
-    "KHR_materials_pbrSpecularGlossiness"
-  ],
   "images": [
     {
-      "uri": "textures/material_diffuse.jpeg"
+      "uri": "textures/material_baseColor.png"
     },
     {
-      "uri": "textures/material_specularGlossiness.png"
+      "uri": "textures/material_metallicRoughness.png"
     },
     {
       "uri": "textures/material_normal.png"
@@ -140,32 +134,20 @@
   "materials": [
     {
       "doubleSided": true,
-      "extensions": {
-        "KHR_materials_pbrSpecularGlossiness": {
-          "diffuseFactor": [
-            1.0,
-            1.0,
-            1.0,
-            1.0
-          ],
-          "diffuseTexture": {
-            "index": 0
-          },
-          "glossinessFactor": 1.0,
-          "specularFactor": [
-            1.0,
-            1.0,
-            1.0
-          ],
-          "specularGlossinessTexture": {
-            "index": 1
-          }
-        }
-      },
       "name": "material",
       "normalTexture": {
-        "index": 2,
-        "scale": 0.4651295732
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
       }
     }
   ],
@@ -216,7 +198,7 @@
       "children": [
         2
       ],
-      "name": "Key2.obj.cleaner.materialmerger.gles"
+      "name": "e232d12a4427498a9322826120529b09.obj.cleaner.materialmerger.gles"
     },
     {
       "mesh": 0,
