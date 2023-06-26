@@ -14,13 +14,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body {
+/* body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
+} */
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -29,7 +29,7 @@ body {
   }
 }
 
-h4 {
+h1 {
   text-align: center;
 }
 
@@ -38,17 +38,22 @@ h5 {
   margin-left: 50px;
 }
 
+.flex-container{
+  display: flex;
+  justify-content: center;
+  gap: 10em;
+  margin-top: 100px;
+}
+
 .button {
-  display: block;
-  width: 400px;
+  /* display: inline-block; */
+  width: 300px;
   height: 100px;
   background: #4E9CAF;
-  padding: 150px;
+  padding: 100px;
   text-align: center;
   border-radius: 5px;
   color: white;
   font-weight: bold;
-  font-size: 60px;
-  line-height: 25px;
-  margin-left: 550px;
+  font-size: 50px;
 }

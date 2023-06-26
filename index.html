@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="./src/index.css" />
     <!-- <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script> -->
     <script src="./src/components/utils/submit.js"></script>
+    <script src="./src/components/utils/uitleg.js"></script>
+    <audio id="uitleg" src="/src/assets/sounds/uitleg.mp3" preload="auto" ></audio>
+    <audio id="uitlegHover" src="/src/assets/sounds/uitlegHover.mp3" preload="auto" ></audio>
 
   </head>
   <body>
     <div class="card">
-      <div class="container">
-        <h4><b>Accesable VR Geocaching</b></h4>
-          <a id="button1" href="./src/scenes/game.html" class="button">Start Game</a>
+      <h1><b>Accessible VR Escaperoom</b></h1>
+      <div class="flex-container">
+       <a id="uitlegAnchor" href="#" class="button">Uitleg</a>
+       <a id="button1" href="./src/scenes/game.html" class="button">Start Game</a>
       </div>
     </div>
   </body>

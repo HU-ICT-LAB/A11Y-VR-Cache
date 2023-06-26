@@ -18,6 +18,7 @@
 
     <!-- COMPONENTS -->
     <script src="../components/utils/mouseenter.js"></script>
+    <script src="../components/utils/timer.js"></script>
     <script src="../components/environment/border.js"></script>
     <script src="../components/environment/world/Cache.js"></script>
     <script src="../components/environment/player/player.js"></script>
@@ -31,6 +32,7 @@
     <script src="../components/environment/world/clock.js"></script>
     <script src="../components/environment/world/Key.js"></script>
     <script src="../components/environment/world/Door.js"></script>
+    <script src="../components/utils/start.js"></script>
   </head>
   <body>
 
@@ -62,6 +64,10 @@
          <a-sound id="versie2" src="../assets/sounds/versie2.mp3" preload></a-sound>
          <a-sound id="deur" src="../assets/sounds/Deur.mp3" preload></a-sound>
          <a-sound id="victory" src="../assets/sounds/Victory.mp3" preload></a-sound>
+         <audio id="startGame" src="../assets/sounds/startGame.mp3" preload></audio>
+         <audio id="countdown" src="../assets/sounds/countdown.mp3" preload></audio>
+         <audio id="eenMinuut" src="../assets/sounds/eenMinuutWaarschuwing.mp3" preload></audio>
+         <audio id="vijfMinuten" src="../assets/sounds/vijfMinutenWaarschuwing.mp3" preload></audio>
 
          <!-- models -->
          <a-asset-item id="treasure" src="../assets/3DModels/treasureBox/scene.gltf"></a-asset-item>
@@ -92,6 +98,7 @@
       <a-entity clock position="-0.3 2.1 -2" scale="0.2 0.2 0.2" gltf-model="#clock"></a-entity>
       <a-entity key rotation="90 75 90" position="-1.4 0 -0.3" scale="0.00040 0.00040 0.00040" gltf-model="#key"></a-entity>
       <a-box exit scale="0.6 1.75 0" position="-0.3 0.8 -1.98"></a-box>
+      <a-entity key rotation="0 15 0" position="-1.4 0 -0.3" scale="0.08 0.08 0.08" gltf-model="#key"></a-entity>
 
       <!-- BORDER -->
       <a-entity id="border" scale="1 1 1">
