@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("uitlegAnchor").addEventListener("click", function(e){
-    e.preventDefault();
-    document.getElementById("uitleg").play();
-    })
-}
-)
+    var uitlegAnchor = document.getElementById("uitlegAnchor");
+    var uitleg = document.getElementById("uitleg");
+  
+    uitlegAnchor.addEventListener("click", function(e) {
+      e.preventDefault();
+      uitleg.play();
+    });
+  });
