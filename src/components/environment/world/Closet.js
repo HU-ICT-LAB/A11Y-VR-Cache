@@ -29,6 +29,7 @@ AFRAME.registerComponent("own-closet", {
             }
             else {
                 this.el.setAttribute("sound", "src: #kast;");
+                document.getElementById("kastSleutelNodig").components.sound.playSound();
             }
         });
     },
