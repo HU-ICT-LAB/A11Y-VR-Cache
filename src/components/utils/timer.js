@@ -10,7 +10,7 @@ function timer(){
 
         setTimeout(function(){
             window.location.href = "gameover.html";
-        }, TEST);
+        }, TEN_MINUTES_IN_MILLISECONDS);
 
         setTimeout(function(){
             document.getElementById("vijfMinuten").play();
