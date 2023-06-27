@@ -4,6 +4,7 @@ function timer(){
         NINE_MINUTES_IN_MILLISECONDS = 540000
         FIVE_MINUTES_IN_MILLISECONDS = 300000;
         FIVE_SECONDS_COUNTDOWN =  TEN_MINUTES_IN_MILLISECONDS - 5000;
+        TEST = 10000;
 
         console.log("timer..");
 
