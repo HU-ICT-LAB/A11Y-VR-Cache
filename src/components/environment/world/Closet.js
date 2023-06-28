@@ -1,22 +1,46 @@
 AFRAME.registerComponent("own-closet", {
-	init: function () {
+    schema: {
+        open: {type: "string"},
+        sleutel: {type: "string"}
+    },
+
+    init: function () {
         this.el.setAttribute("class", "interactable");
+        this.el.setAttribute("own-closet", "open: false; sleutel: false;")
+        this.el.setAttribute("id", "closet");
+        this.el.setAttribute("sound", "src: #kast;");
+    },
 
-        this.el.addEventListener("raycaster-intersected", () => {
-            console.log("ik ben een coole kast");
-            this.el.setAttribute("animation-mixer", "clip: L_door|open_left; timeScale: 1"); 
-            this.el.addEventListener("animation-loop", () => {
-                this.el.removeAttribute("animation-mixer");
-            })
-            
+    update: function(oldData) {
+        this.el.addEventListener("closetEvent", () => {
+            if(this.data.sleutel === "true") {
+                if(this.data.open === "false") {
+                    this.el.setAttribute("sound", "src: #kastopen;");
+                    this.el.setAttribute("animation-mixer", "clip: 001; timeScale: 0.03;");
+                    setTimeout(() => {this.el.setAttribute("animation-mixer", "timeScale: 0;")}, 10500);
+                    this.el.components.sound.playSound();
+                    this.el.setAttribute("own-closet", "open: true");
+                    sessionStorage.setItem("closetOpened", "true");
+                    document.getElementById("cache").setAttribute("cache-interaction", "isAllowed: true");
+                    this.el.removeAttribute("sound");
+                    this.el.setAttribute("sound", "src: #kast");
+
+                }
+            }
+            else {
+                this.el.setAttribute("sound", "src: #kast;");
+                document.getElementById("kastSleutelNodig").components.sound.playSound();
+            }
         });
+    },
 
-        this.el.addEventListener("raycaster-intersected-cleared", () => {
-            this.el.removeAttribute("animation-mixer");
-        })
-        // this.el.addEventListener("click", () => {
-        //     this.el.setAttribute("animation-mixer", "clip: L_door|open_left; repeat: once"); 
-        //     this.el.removeAttribute("animation-mixer");
-        // });
-	}
+    tick: function() {
+            if(sessionStorage.getItem("keyFound") === "true") {
+                if(this.data.open === "false") {
+                    this.el.setAttribute("own-closet", "open: false; sleutel: true");
+                }
+                
+            }
+    }
 })
+

@@ -23,7 +23,6 @@ AFRAME.registerComponent("border1", {
 		element.setAttribute("material", "color: green; opacity: 0;");
 		element.setAttribute("scale", "0 10 1");
 		element.setAttribute("static-body", null);
-		element.setAttribute("class", "interactable");
 
         this.cam = document.getElementById("camera").object3D.position;
         this.border1 = document.getElementById("wall1").getAttribute("position");
@@ -42,21 +41,11 @@ AFRAME.registerComponent("border1", {
         this.border14 = document.getElementById("wall14").getAttribute("position");
         this.border15= document.getElementById("wall15").getAttribute("position");
         this.border16 = document.getElementById("wall16").getAttribute("position");
-
-
-
-		this.el.addEventListener("raycaster-intersected", function () {
-			console.log("je hebt de  muur geraakt")
-			this.intersect = true;
-		});
-		this.el.addEventListener("raycaster-intersected-cleared", function () {
-			this.intersect = false;
-		});
 	},
 
 	vibrate: function () {
 		if (this.intersect) {
-			document.getElementById("right").components.haptics.pulse(1, 50);
+			document.getElementById("right").components.haptics.pulse(0.8, 50);
 		}
 	},
 
@@ -96,10 +85,10 @@ AFRAME.registerComponent("border1", {
         let distance15 = camPos.distanceTo(border15Post)
         let distance16 = camPos.distanceTo(border16Post)
         
-        let allowedDistance = 0.5
+        let allowedDistance = 1
         if(distance1 < allowedDistance || distance2 < allowedDistance || distance3 < allowedDistance || distance4 < allowedDistance || distance5 < allowedDistance || distance6 < allowedDistance || distance7 < allowedDistance || distance8 < allowedDistance || distance9 < allowedDistance || distance10 < allowedDistance || distance11 < allowedDistance || distance12 < allowedDistance || distance13 < allowedDistance || distance14 < allowedDistance || distance15 < allowedDistance || distance16 < allowedDistance) {
             // document.getElementById("test").components.sound.playSound();
-            document.getElementById("right").components.haptics.pulse(1, 50);
+            document.getElementById("right").components.haptics.pulse(0.8, 50);
         }
         else {
             document.getElementById("test").components.sound.stopSound();

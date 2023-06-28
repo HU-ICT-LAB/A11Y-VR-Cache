@@ -1,13 +1,7 @@
 function submit() {
-        let height = document.getElementById("height").value;
-        let width = document.getElementById("width").value;
-
-
-        let data = {
-            height: height,
-            width: width
-        }
-        sessionStorage.setItem("settings", JSON.stringify(data));
+        sessionStorage.setItem("versie", 1);
+        sessionStorage.setItem("keyFound", "false");
+        sessionStorage.setItem("doorKeyFound", "false");
     }
    
 window.onload = function () {
